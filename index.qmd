@@ -1,7 +1,7 @@
 ---
-title: "Your talk title"
-subtitle: "CNG lightning talk"
-author: "Your Name"
+title: "Introducing Portolan"
+subtitle: "… for CNG"
+author: "Chris Holmes"
 format:
   revealjs:
     theme: [default, custom.scss]
@@ -16,697 +16,522 @@ format:
     width: 1600
     height: 900
     chalkboard: false
+    include-in-header: head.html
     include-after-body: animations.html
 title-slide-attributes:
   data-autoslide: "0"
   data-state: no-bars
 ---
 
-::: {#title-howto .howto}
-**Edit me:** set `title`, `subtitle`, and `author` at the top of `index.qmd`. Delete this `.howto` box when you're done.
-
-Note that this slide does not automatically advance... you need to manually advance to the next slide. Subsequent slides will automatically advance.
+::: {#title-block .title-block}
+```{=html}
+<img class="mark" src="images/brand/portolan-logomark-4163cc.svg" alt="Portolan mark">
+<p class="title">Introducing Portolan</p>
+<p class="subtitle dots"><span style="--d:1.1s">.</span><span style="--d:1.45s">.</span><span style="--d:1.8s">.</span><span class="words" style="--d:2.3s"> for CNG</span></p>
+<p class="byline">Chris Holmes · Cloud-Native Geospatial Conference · 2026</p>
+```
 :::
 
-## {#slide-01 background-image="images/pexels-matthew-montrone-230847-2395812.jpg" background-size="cover" background-position="center"}
-
-::: {.deep-shade}
-:::
-
-::: {.center-v .deep-copy}
-[Thanks for agreeing to give a lightning talk!]{.statement-sub .a-fade style="--d:0.3s"}
-
-[Your talk]{.statement .a-rise style="--d:2s"}
-
-[is going]{.statement .a-rise style="--d:4s"}
-
-[to be]{.statement .a-rise style="--d:6s"}
-
-[great!!!]{.statement .hl .a-rise style="--d:8.5s"}
+::: {.notes}
+So I'm here to talk about Portolan. But this talk is going to be a bit different from most of the Portolan talks you'll see, because this audience is different from our typical target audience.
 :::
 
 
-## Basics {#slide-02 .hide-title}
+## {#slide-02}
 
-::: {.howto .bottom}
-**Edit me:** replace this text for this slide (and others) with your own by editing the `index.qmd` file. Delete this `.howto`box when you're done.
+::: {.slide-head}
+[Who we are building for]{.eyebrow}
+
+[Portolan's job is to take CNG mainstream]{.headline}
 :::
 
-This content for all slides can be updated by editing the `index.qmd` file.
+::: {.slide-body}
+```{=html}
+<svg class="chasm" viewBox="0 0 1440 520" role="img" aria-label="Technology adoption curve. Innovators and early adopters sit left of the chasm; the early and late majority, where Portolan is aimed, are highlighted in Portolan blue.">
+  <defs>
+    <clipPath id="bell">
+      <path d="M110 430L110 426L118 425L126 425L134 424L143 423L151 423L159 422L167 421L175 420L183 419L191 417L199 416L208 415L216 413L224 411L232 409L240 407L248 405L256 403L265 400L273 397L281 394L289 391L297 388L305 384L313 381L321 377L330 372L338 368L346 363L354 358L362 353L370 348L378 342L387 336L395 330L403 324L411 317L419 311L427 304L435 297L443 289L452 282L460 274L468 267L476 259L484 251L492 243L500 236L509 228L517 220L525 212L533 204L541 197L549 189L557 182L565 175L574 168L582 161L590 155L598 149L606 143L614 138L622 133L631 129L639 125L647 121L655 118L663 115L671 113L679 112L687 111L696 110L704 110L712 111L720 112L728 113L736 115L744 118L753 121L761 124L769 128L777 133L785 138L793 143L801 149L809 155L818 161L826 167L834 174L842 181L850 189L858 196L866 204L875 211L883 219L891 227L899 235L907 243L915 251L923 258L931 266L940 274L948 281L956 289L964 296L972 303L980 310L988 317L997 323L1005 330L1013 336L1021 342L1029 347L1037 353L1045 358L1053 363L1062 368L1070 372L1078 376L1086 380L1094 384L1102 388L1110 391L1119 394L1127 397L1135 400L1143 402L1151 405L1159 407L1167 409L1175 411L1184 413L1192 414L1200 416L1208 417L1216 419L1224 420L1232 421L1241 422L1249 423L1257 423L1265 424L1273 425L1281 425L1289 426L1297 426L1306 427L1314 427L1322 427L1330 428L1330 430Z"/>
+    </clipPath>
+  </defs>
 
-It uses the **markdown** markup language, which has a simple syntax for formatting text. The Quarto docs have a good [reference](https://quarto.org/docs/authoring/markdown-syntax.html) for the syntax.
+  <!-- Segments: rectangles clipped to the curve, so the geometry lives in one path -->
+  <g clip-path="url(#bell)">
+    <rect class="a-fade" style="--d:0.2s"  x="110" y="60" width="190" height="370" fill="rgba(22,23,15,0.20)"/>
+    <rect class="a-fade" style="--d:0.4s"  x="300" y="60" width="200" height="370" fill="rgba(22,23,15,0.38)"/>
+    <rect class="a-fade" style="--d:0.9s"  x="500" y="60" width="200" height="370" fill="#4163cc"/>
+    <rect class="a-fade" style="--d:1.15s" x="700" y="60" width="200" height="370" fill="#4163cc"/>
+    <rect class="a-fade" style="--d:1.4s"  x="900" y="60" width="430" height="370" fill="rgba(22,23,15,0.20)"/>
+  </g>
 
-This content on this slide is simple... just text with minor formatting.
+  <!-- Cream hairlines separating the segments -->
+  <g stroke="#fcfcfa" stroke-width="2">
+    <line x1="300" y1="387" x2="300" y2="430"/>
+    <line x1="700" y1="110" x2="700" y2="430"/>
+    <line x1="900" y1="235" x2="900" y2="430"/>
+  </g>
+
+  <line x1="110" y1="430" x2="1330" y2="430" stroke="#16170f" stroke-width="2"/>
+
+  <!-- The chasm -->
+  <g class="a-fade" style="--d:0.62s">
+    <line x1="500" y1="36" x2="500" y2="430" stroke="#16170f" stroke-width="2" stroke-dasharray="6 7"/>
+    <path d="M492 56 L508 56 L500 74 Z" fill="#16170f"/>
+  </g>
+
+  <text class="band" x="305" y="26" text-anchor="middle">Early market</text>
+  <text class="band" x="500" y="26" text-anchor="middle" style="fill:#16170f">The chasm</text>
+  <text class="band" x="920" y="26" text-anchor="middle">Mainstream market</text>
+
+  <text class="inside a-fade" style="--d:1.7s" x="700" y="330" text-anchor="middle">Where Portolan is aimed</text>
+
+  <!-- Leader from the left margin into the early-adopter shoulder -->
+  <g class="a-fade" style="--d:0.45s">
+    <text class="here" x="150" y="180">CNG is here today</text>
+    <path d="M186 196 L186 250 L400 332" fill="none" stroke="#4163cc" stroke-width="1.5"/>
+    <circle cx="400" cy="332" r="4.5" fill="#4163cc"/>
+  </g>
+
+  <g>
+    <text class="seg-name" x="205"  y="472" text-anchor="middle">Innovators</text>
+    <text class="seg-pct"  x="205"  y="500" text-anchor="middle">2.5%</text>
+    <text class="seg-name" x="400"  y="472" text-anchor="middle">Early adopters</text>
+    <text class="seg-pct"  x="400"  y="500" text-anchor="middle">13.5%</text>
+    <text class="seg-name" x="600"  y="472" text-anchor="middle">Early majority</text>
+    <text class="seg-pct"  x="600"  y="500" text-anchor="middle">34%</text>
+    <text class="seg-name" x="800"  y="472" text-anchor="middle">Late majority</text>
+    <text class="seg-pct"  x="800"  y="500" text-anchor="middle">34%</text>
+    <text class="seg-name" x="1115" y="472" text-anchor="middle">Laggards</text>
+    <text class="seg-pct"  x="1115" y="500" text-anchor="middle">16%</text>
+  </g>
+</svg>
+```
+:::
+
+::: {.notes}
+One of our main goals with Portolan is to take cloud-native geospatial mainstream — to go beyond the early adopters, into the early majority and hopefully the late majority.
+:::
 
 
-## Images {#slide-03}
+## {#slide-03}
 
-You can add images to slides by embedding the image file in the slide content.
+::: {.slide-head}
+[The usual pitch]{.eyebrow}
 
-![](https://images.pexels.com/photos/11379990/pexels-photo-11379990.jpeg){width=500 fig-align="center"}
+[Why Portolan]{.headline}
+:::
 
-## Images - absolute placement {#slide-04}
+::: {.slide-body}
+```{=html}
+<div class="cols">
+  <div class="a-rise" style="--d:0.2s">
+    <h3>Open and interoperable</h3>
+    <p>Built on GeoParquet, PMTiles, COG, and STAC, so data drops straight into QGIS, ArcGIS, pandas, or BigQuery.</p>
+  </div>
+  <div class="a-rise" style="--d:0.45s">
+    <h3>Simple, cheap, scalable, sovereign</h3>
+    <p>Your data are just files in a bucket. Any S3-compatible provider, any jurisdiction. You pay for storage and egress — no servers, no databases, no custom APIs.</p>
+  </div>
+  <div class="a-rise" style="--d:0.7s">
+    <h3>Built for people and agents</h3>
+    <p>Catalogs are well-structured, well-formatted, and well-documented, so people and agents can find, understand, and use them.</p>
+  </div>
+</div>
+```
+:::
 
-You can also place multiple images at precise positions with the `.absolute` class and `top`/`left`/`bottom`/`right` offsets (in pixels, on a 1600 × 900 slide).
+::: {.notes}
+Most of our slides look like this — which is really just trumpeting the benefits of CNG. So a common reaction from people already deep in CNG is: "why do we need this?"
 
-![](https://images.pexels.com/photos/11379990/pexels-photo-11379990.jpeg){.absolute top=250 left=80 width=380}
-
-![](https://images.pexels.com/photos/11379990/pexels-photo-11379990.jpeg){.absolute top=350 left=180 width=380 fig-alt="Line-art mountain range"}
-
-![](images/results.svg){.absolute bottom=90 right=120 width=360 fig-alt="Line chart trending upward"}
+And if you already know everything about CNG, and you stay up to date on the exact settings of all the formats, and you always make amazing catalogs — then the answer is, you don't.
+:::
 
 
-## SVG graphics {#slide-05}
+## {#slide-04}
 
-You can add SVG graphics for line art, like the one below, by referencing an SVG file.
+::: {.center-v}
+[Portolan is for everyone else.]{.statement .a-rise style="--d:0.3s"}
 
-![](images/cng-logo.svg)
+[A Portolan catalog is a STAC catalog — with more guidance, plus requirements on the CNG formats inside it, so that everything performs in a browser.]{.lead .a-fade style="--d:1.6s" }
+:::
+
+::: {.notes}
+Portolan is for everyone else.
+
+A Portolan catalog is a STAC catalog, with more guidance, plus requirements on the CNG formats that are in it to ensure they perform well in a browser.
+:::
+
+
+## {#slide-05}
+
+::: {.slide-head}
+[Anatomy]{.eyebrow}
+
+[STAC, plus the rules that make it work everywhere]{.headline}
+:::
+
+::: {.slide-body .split}
+```{=html}
+<pre class="tree a-fade" style="--d:0.2s">catalog.json          <span class="c">STAC root</span>
+├── <span class="k">AGENTS.md</span>         <span class="c">how an agent should use this data</span>
+├── <span class="k">README.md</span>         <span class="c">how a person should</span>
+└── collections/
+    └── land-use/
+        ├── collection.json
+        ├── <span class="k">style.json</span>    <span class="c">MapLibre style, as an asset</span>
+        ├── land-use.pmtiles
+        ├── land-use.parquet
+        └── parts/<span class="k">*.parquet</span>  <span class="c">glob, via the partition ext.</span></pre>
+<ul class="ruled a-fade" style="--d:0.8s">
+  <li><b>Required formats.</b> <span class="note">GeoParquet, PMTiles, COG — at settings that actually stream.</span></li>
+  <li><b>Required documentation.</b> <span class="note">Every collection says what it is and where it came from.</span></li>
+  <li><b>Required extensions.</b> <span class="note">Table extension on tabular data, so columns are known up front.</span></li>
+  <li><b>A validator.</b> <span class="note"><code>portolan check</code> fails the build when any of that slips.</span></li>
+</ul>
+```
+:::
+
+::: {.notes}
+Structurally there's not much to it. It's STAC, with a handful of things made mandatory: the formats and their settings, the documentation, the table extension, and a validator that enforces all of it.
+:::
 
 
 ## {#slide-06}
 
-::: {.center-v}
-![](images/cng-logo.svg){fig-alt="Cloud Native Geospatial Forum logo" width=500}
+::: {.slide-head}
+[The browser]{.eyebrow}
 
-### Cloud Native Geospatial community
+[Replacing the portal, not wrapping it]{.headline}
 :::
+
+::: {.slide-body}
+```{=html}
+<figure class="shot">
+  <video class="screen" src="media/data-browser.mp4" data-autoplay muted loop playsinline></video>
+  <figcaption>portolan-browser, reading a catalog straight out of object storage</figcaption>
+</figure>
+```
+:::
+
+::: {.notes}
+Our goal is to enable CNG to completely replace the traditional spatial data infrastructure APIs and portals. So we take a holistic lens on the ecosystem, to make sure we have all the pieces to deliver a complete experience.
+:::
+
 
 ## {#slide-07}
 
-::: {.center-v}
-![](images/lightning-talk.svg){fig-alt="Stick figure standing at a podium"}
+::: {.slide-head}
+[Vector in the browser]{.eyebrow}
 
-### Your have 5 minutes to share anything
+[Making vector data actually work]{.headline}
+:::
+
+::: {.slide-body .split}
+```{=html}
+<figure class="shot" style="flex:1.35 1 0">
+  <div class="placeholder">Placeholder — vector-in-the-browser recording</div>
+</figure>
+<ul class="ruled a-fade" style="--d:0.3s">
+  <li><b>Styles as STAC assets.</b> <span class="note">A collection ships the cartography it was meant to be seen with.</span></li>
+  <li><b>Glob syntax in the partition extension.</b> <span class="note">Point at a split dataset without listing every part.</span></li>
+  <li><b>The table extension, required.</b> <span class="note">A client knows the schema before it fetches a byte.</span></li>
+</ul>
+```
+:::
+
+::: {.notes}
+This has led to a few advances that are interesting to people in this room: including styles as assets in a STAC catalog, extending the STAC partition extension with glob syntax, and requiring the table extension.
 :::
 
 
 ## {#slide-08}
 
-::: {.center-v}
-::: {.formula}
-[20]{.highlight} slides  ×  [15]{.highlight} seconds  =  **5 minutes**
+::: {.slide-head}
+[stac-geoparquet]{.eyebrow}
+
+[Cloud-native search, with no search API]{.headline}
 :::
+
+::: {.slide-body .split}
+```{=html}
+<figure class="shot" style="flex:2 1 0">
+  <video class="screen" src="media/s2-search.mp4" data-autoplay muted loop playsinline></video>
+</figure>
+<div class="stats" style="flex-direction:column; gap:2.4rem">
+  <div><span class="num">20 h</span><span class="label">before</span></div>
+  <div><span class="num">16 min</span><span class="label">after</span></div>
+  <div><span class="num">&lt; 1 s</span><span class="label">search, full S-2 archive</span></div>
+</div>
+```
+:::
+
+::: {.notes}
+We're embracing stac-geoparquet to enable completely cloud-native search. I just put up all of Sentinel-2 in GeoParquet, and it took a bulk processing job I had from 20 hours down to 16 minutes. And you can see it also powering sub-second search responses across the entire Sentinel-2 archive.
 :::
 
 
 ## {#slide-09}
 
-::: {.center-v}
-![](images/one-idea.svg){fig-alt="A slide with an arrow pointing to a circle containing the number 1"}
+::: {.slide-head}
+[AGENTS.md]{.eyebrow}
 
-### One slide. One idea. 15 seconds.
+[Point an agent at a catalog and it just works]{.headline}
+:::
+
+::: {.slide-body .split}
+```{=html}
+<figure class="shot" style="flex:1.3 1 0">
+  <video class="screen" src="media/tulip-chat.mp4" data-autoplay muted loop playsinline></video>
+</figure>
+<p class="lead a-fade" style="--d:0.4s">Almost any agent can install DuckDB and do fairly advanced geospatial analysis. The catalog just has to tell it how. We think this is what finally opens geospatial up to many more users.</p>
+```
+:::
+
+::: {.notes}
+And we added an AGENTS.md file, which enables pretty magical direct interaction with geospatial data. Most every agent can install DuckDB and do pretty advanced geospatial analysis, and we believe this will ultimately open up the power of geospatial to many more users.
 :::
 
 
 ## {#slide-10}
 
-::: {.center-v}
-<!-- Raw <h3>, not ###: a heading first in a div becomes its own nested slide (#/getting-creative) -->
+::: {.slide-head}
+[Skills and connectors]{.eyebrow}
+
+[Making a great catalog is now the easy part]{.headline}
+:::
+
+::: {.slide-body .split}
 ```{=html}
-<h3><strong>Getting creative</strong></h3>
+<figure class="shot" style="flex:1.15 1 0">
+  <video class="screen" src="media/catalog-demo.mp4" data-autoplay muted loop playsinline></video>
+</figure>
+<ul class="ruled a-fade" style="--d:0.4s">
+  <li><b>Agentic skills</b> <span class="note">that translate an entire catalog into Portolan.</span></li>
+  <li><b>Connectors</b> <span class="note">for ArcGIS, WFS, and more, getting better every week.</span></li>
+  <li><b>One prompt</b> <span class="note">from a city open-data portal to a published, documented catalog.</span></li>
+</ul>
 ```
+:::
 
-If you have access to an AI assistant, you can point it at the source code for this presentation and ask it to modify slides.
-
-The following slides show some examples of what you can do...
-(Thanks to Alex for sharing these examples!)
+::: {.notes}
+We've also invested in various agentic skills to make it easy to translate entire catalogs into Portolan, and we're continually improving the connectors to ArcGIS, WFS and others. So making a great catalog is incredibly easy.
 :::
 
 
 ## {#slide-11}
 
-::: {.howto}
-**Separation of concerns:** this slide is split across three files. `index.qmd` holds the content (the SVG and text below), `custom.scss` holds the look and the timed CSS animations (search for "Slide 11"), and `animations.html` holds the JavaScript that runs the clock.
+::: {.slide-head}
+[The whole stack]{.eyebrow}
+
+[A complete ecosystem, built on your work]{.headline}
 :::
 
+::: {.slide-body}
 ```{=html}
-<svg class="photon-trip" viewBox="0 0 1600 900" aria-label="A photon travels from the Sun to Earth in 8 minutes 20 seconds">
-  <defs>
-    <radialGradient id="sun-fill" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#fff3b0"/>
-      <stop offset="0.7" stop-color="#FFD626"/>
-      <stop offset="1" stop-color="#f0a01f"/>
-    </radialGradient>
-    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="40"/>
-    </filter>
-  </defs>
-
-  <!-- Sun -->
-  <circle cx="-260" cy="450" r="600" fill="#FFD626" opacity="0.3" filter="url(#halo)"/>
-  <circle cx="-260" cy="450" r="560" fill="url(#sun-fill)"/>
-
-  <!-- Earth -->
-  <circle class="earth-glow" cx="1340" cy="450" r="110" fill="#2126F7" filter="url(#halo)"/>
-  <g stroke="#F2F4F6" stroke-width="4" fill="none">
-    <circle cx="1340" cy="450" r="72" fill="rgba(33,38,247,0.25)"/>
-    <ellipse cx="1340" cy="450" rx="30" ry="72"/>
-    <line x1="1268" y1="450" x2="1412" y2="450"/>
-    <path d="M1280 414 Q1340 426 1400 414"/>
-    <path d="M1280 486 Q1340 474 1400 486"/>
-  </g>
-
-  <!-- Photon -->
-  <path class="photon-trail" pathLength="1000" fill="none" stroke="#FFD626" stroke-width="3" stroke-linecap="round"
-        d="M303 450 q15 -16 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
-  <path class="photon-head" pathLength="1000" fill="none" stroke="#fff6d8" stroke-width="7" stroke-linecap="round" filter="url(#soft-glow)"
-        d="M303 450 q15 -16 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0"/>
-</svg>
-<p class="trip-clock">0:00</p>
-<p class="trip-caption">Sunlight takes 8 min 20 s to cross 93 million miles</p>
+<div class="eco">
+  <div class="a-rise" style="--d:0.15s">
+    <span class="n">01</span>
+    <h3>Spec + validator</h3>
+    <p>One document that says what good looks like, and a checker that enforces it.</p>
+  </div>
+  <div class="a-rise" style="--d:0.35s">
+    <span class="n">02</span>
+    <h3>CLI + skills</h3>
+    <p>Convert, partition, document, and publish — by hand or by agent.</p>
+  </div>
+  <div class="a-rise" style="--d:0.55s">
+    <span class="n">03</span>
+    <h3>Browser</h3>
+    <p>A portal experience served from static files, for any compliant catalog.</p>
+  </div>
+  <div class="a-rise" style="--d:0.75s">
+    <span class="n">04</span>
+    <h3>Registry</h3>
+    <p>Where the catalogs are, so people and agents can find them.</p>
+  </div>
+</div>
 ```
+
+[Still targeting early adopters. The goal: every geospatial tool understands Portolan, and hundreds of open-data catalogs exist in the format.]{.lead .a-fade style="--d:1s"}
+:::
+
+::: {.notes}
+We are aiming for a complete ecosystem, and we've been leveraging all the amazing work that this community has created. We're still targeting early adopters, and our goal is to have every geospatial tool understand Portolan, and to get hundreds of catalogs of open data in the format.
+:::
+
 
 ## {#slide-12}
 
-[Dig deeper: find the dependencies, lean into the taxonomy]{.headline .slide-top}
+::: {.slide-head}
+[Yesterday]{.eyebrow}
 
+[We do this by working with as many of you as possible]{.headline}
+:::
+
+::: {.slide-body .split}
 ```{=html}
-<div class="dep-layout">
-  <svg class="dep-graph" viewBox="0 0 700 360" aria-label="Dependency graph: A depends on B and C, B depends on D">
-    <g stroke="#FFD626" stroke-width="4" fill="none">
-      <path class="dep-edge" style="--d:0.4s" pathLength="1" d="M584 168 L392.7 78"/>
-      <path class="dep-edge" style="--d:1s" pathLength="1" d="M296 60 L126 60"/>
-      <path class="dep-edge" style="--d:1.6s" pathLength="1" d="M584 196 L392.8 280.3"/>
-    </g>
-    <g fill="#FFD626">
-      <path class="a-fade" style="--d:0.85s" d="M380 72 L400.1 71.5 L392.5 87.8 Z"/>
-      <path class="a-fade" style="--d:1.45s" d="M112 60 L130 51 L130 69 Z"/>
-      <path class="a-fade" style="--d:2.05s" d="M380 286 L392.8 270.5 L400.1 287 Z"/>
-    </g>
-    <g stroke="#FFD626" stroke-width="4" fill="rgba(255,214,38,0.08)">
-      <circle cx="70" cy="60" r="42"/>
-      <circle cx="338" cy="60" r="42"/>
-      <circle cx="624" cy="182" r="42"/>
-      <circle cx="338" cy="300" r="42"/>
-    </g>
-    <g class="dep-labels" text-anchor="middle">
-      <text x="70" y="72">D</text>
-      <text x="338" y="72">B</text>
-      <text x="624" y="194">A</text>
-      <text x="338" y="312">C</text>
-    </g>
-  </svg>
-  <ul class="families">
-    <li class="a-rise" style="--c:#4a7fd8; --d:2.2s"><b>F1</b> Physical and biological foundations</li>
-    <li class="a-rise" style="--c:#e07040; --d:2.6s"><b>F2</b> Knowledge, evidence, and methods</li>
-    <li class="a-rise" style="--c:#5bb58a; --d:3.0s"><b>F3</b> People, skills, and work</li>
-    <li class="a-rise" style="--c:#e3a83a; --d:3.4s"><b>F4</b> Technology, components, and tools</li>
-    <li class="a-rise" style="--c:#e088a8; --d:3.8s"><b>F5</b> Infrastructure and operational services</li>
-    <li class="a-rise" style="--c:#4f9a35; --d:4.2s"><b>F6</b> Organizations, institutions, and governance</li>
-    <li class="a-rise" style="--c:#7a6ad6; --d:4.6s"><b>F7</b> Resources, production, and economic support</li>
-    <li class="a-rise" style="--c:#e0595a; --d:5.0s"><b>F8</b> Relationships, communication, and adoption</li>
-  </ul>
+<figure class="shot" style="flex:1.5 1 0">
+  <div class="placeholder">Placeholder — photo from yesterday's sprint</div>
+</figure>
+<div class="stats" style="flex-direction:column; gap:2rem">
+  <div><span class="num">12</span><span class="label">people</span></div>
+  <div><span class="num">X</span><span class="label">new catalogs</span></div>
+  <div><span class="num">Y</span><span class="label">of new data</span></div>
 </div>
 ```
+:::
+
+::: {.notes}
+We're aiming to do that by working with as many of you as possible. We had a great sprint yesterday, where twelve of us produced X new catalogs with Y amounts of new data. Our focus for now is really the data — converting all the great global datasets, along with many key regional ones.
+:::
 
 
 ## {#slide-13}
 
+::: {.slide-head}
+[What the data makes possible]{.eyebrow}
+
+[Twenty years of global fire detections, interactive]{.headline}
+:::
+
+::: {.slide-body}
 ```{=html}
-<svg class="cartwheels" viewBox="0 0 1600 900" aria-label="Stick figures cartwheeling across the screen in both directions, near and far">
-<g stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
-<!-- Far layer first so nearer figures draw on top -->
-  <g class="cw-move" style="--x0:1760px; --x1:-160px; --cw:10.47s; --cd:-9.87s">
-    <g transform="translate(0 345) scale(0.45)" stroke="#8B929B">
-      <g class="cw-spin" style="--spin:-1956deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:-160px; --x1:1760px; --cw:10.47s; --cd:-0.30s">
-    <g transform="translate(0 351) scale(0.45)" stroke="#8B929B">
-      <g class="cw-spin" style="--spin:1956deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:1760px; --x1:-160px; --cw:11.35s; --cd:-7.36s">
-    <g transform="translate(0 352) scale(0.45)" stroke="#8B929B">
-      <g class="cw-spin" style="--spin:-1956deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:-160px; --x1:1760px; --cw:10.02s; --cd:-4.70s">
-    <g transform="translate(0 311) scale(0.45)" stroke="#8B929B">
-      <g class="cw-spin" style="--spin:1956deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:-160px; --x1:1760px; --cw:7.12s; --cd:-0.09s">
-    <g transform="translate(0 504) scale(0.7)" stroke="#BCC1C8">
-      <g class="cw-spin" style="--spin:1257deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:1760px; --x1:-160px; --cw:7.89s; --cd:-7.23s">
-    <g transform="translate(0 489) scale(0.7)" stroke="#BCC1C8">
-      <g class="cw-spin" style="--spin:-1257deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:-160px; --x1:1760px; --cw:6.69s; --cd:-5.33s">
-    <g transform="translate(0 483) scale(0.7)" stroke="#BCC1C8">
-      <g class="cw-spin" style="--spin:1257deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:-160px; --x1:1760px; --cw:4.88s; --cd:-0.01s">
-    <g transform="translate(0 681) scale(1.0)" stroke="#F2F4F6">
-      <g class="cw-spin" style="--spin:880deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:1760px; --x1:-160px; --cw:4.55s; --cd:-0.98s">
-    <g transform="translate(0 685) scale(1.0)" stroke="#F2F4F6">
-      <g class="cw-spin" style="--spin:-880deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-  <g class="cw-move" style="--x0:-160px; --x1:1760px; --cw:4.41s; --cd:-1.28s">
-    <g transform="translate(0 719) scale(1.0)" stroke="#F2F4F6">
-      <g class="cw-spin" style="--spin:880deg">
-        <circle cx="0" cy="-97" r="22" fill="#1D232B"/>
-        <line x1="0" y1="-75" x2="0" y2="25"/>
-        <polyline points="-75,-110 0,-55 75,-110"/>
-        <polyline points="-62,110 0,25 62,110"/>
-      </g>
-    </g>
-  </g>
-</g>
-</svg>
+<figure class="shot">
+  <video class="screen" src="media/firms-explorer.mp4" data-autoplay muted loop playsinline></video>
+  <figcaption>an explorer built on a Portolan catalog of NASA FIRMS data</figcaption>
+</figure>
 ```
+:::
+
+::: {.notes}
+With each new dataset converted, I hope we push the cloud-native geospatial ecosystem forward in a different way — that it becomes a community of people making great data products and pushing the edges of what's possible with CNG. This was an explorer I made on top of a FIRMS fire data catalog, pushing the bounds of interactivity across twenty years of global data.
+:::
 
 
 ## {#slide-14}
 
-::: {.center-v}
-![](images/sharing-ideas.svg){fig-alt="Stick figure pointing up at a glowing lightbulb"}
+::: {.slide-head}
+[The registry]{.eyebrow}
 
-### Sharing sparks new ideas
+[Like STAC Index, with a guarantee attached]{.headline}
+:::
+
+::: {.slide-body}
+```{=html}
+<figure class="shot">
+  <video class="screen" src="media/registry.mp4" data-autoplay muted loop playsinline></video>
+  <figcaption>every registered catalog is documented, validated, and performant</figcaption>
+</figure>
+```
+:::
+
+::: {.notes}
+The other key bit of the ecosystem is the Portolan Registry, where all high quality catalogs get registered for everyone to query. It's like STAC Index, but with a guarantee to users that the data will always be well-documented and performant.
 :::
 
 
 ## {#slide-15}
 
+::: {.slide-head}
+[Why the registry matters]{.eyebrow}
 
-::: {.center-v}
-![](images/problem.svg){fig-alt="Stick figure surrounded by question marks"}
+[Five catalogs, one question, no GIS team]{.headline}
+:::
 
-### **[The problem]** {.muted}
+::: {.slide-body .split}
+```{=html}
+<figure class="shot" style="flex:1.9 1 0">
+  <video class="screen" src="media/finland-demo.mp4" data-autoplay muted loop playsinline></video>
+</figure>
+<p class="lead a-fade" style="--d:0.4s">Siting a data centre in Finland: grid access, flood hazard, cooling water, protected areas, land cover. Previously a team of geospatial experts and a week of work.</p>
+```
+:::
 
-[What's broken or missing?]{.muted}
+::: {.notes}
+The goal is to gather enough global data to be able to answer complex geospatial questions with LLMs. We want to enable the type of analysis that would previously take a team of geospatial experts to pull in all the data and extract insights from. This was an early demo showing how you can answer questions about data centres by pulling data in from five different Portolan catalogs.
 :::
 
 
 ## {#slide-16}
 
 ::: {.center-v}
-![](images/big-idea.svg){fig-alt="Glowing lightbulb"}
+[We want to see all the world's data in CNG formats.]{.statement .a-rise style="--d:0.2s"}
 
-### **[The big idea]** {.muted}
+[AI can help us get there — and the world's data in CNG formats lets anyone use AI to get geospatial insights. That's a couple of orders of magnitude more people using geospatial information.]{.lead .a-fade style="--d:1.4s"}
+:::
 
-[Your core insight in one sentence]{.muted}
+::: {.notes}
+We want to see all the world's data in CNG formats. We believe AI can help get us there, and that the world's data in CNG formats will enable anyone to use AI to get geospatial insights — increasing the users of geospatial information by at least a couple of orders of magnitude.
 :::
 
 
 ## {#slide-17}
 
-::: {.center-v}
-![](images/live-demo.svg){fig-alt="Browser window with placeholder text lines"}
+::: {.slide-head}
+[What comes after]{.eyebrow}
 
-### **[Live demo]** {.muted}
+[Then we go back across the chasm]{.headline}
+:::
 
-[Screenshot, GIF, or live walkthrough]{.muted}
+::: {.slide-body}
+```{=html}
+<ol class="ruled" style="max-width:1180px">
+  <li class="a-rise" style="--d:0.2s"><span><b>A hundred or so catalogs,</b> <span class="note">and the tools really nailed down.</span></span></li>
+  <li class="a-rise" style="--d:0.45s"><span><b>Case studies and logos,</b> <span class="note">so it isn't only the crazy early adopters.</span></span></li>
+  <li class="a-rise" style="--d:0.7s"><span><b>The early majority,</b> <span class="note">where it would be crazy not to adopt Portolan.</span></span></li>
+</ol>
+```
+:::
+
+::: {.notes}
+Once we have a hundred or so catalogs and get the tools really nailed, our next goal will be to start to go after the early majority. We aim to get a number of case studies and logos in place to show that it's not just the crazy early adopters — but instead that it would be crazy not to adopt Portolan.
 :::
 
 
 ## {#slide-18}
 
-::: {.center-v}
-![](images/results.svg){fig-alt="Line chart trending upward"}
+::: {.slide-head}
+[Help wanted]{.eyebrow}
 
-### **[Results]** {.muted}
+[If you're pushing CNG, you're already part of this]{.headline}
+:::
 
-[One metric that got measurably better]{.muted}
+::: {.slide-body .split}
+```{=html}
+<p class="lead a-fade" style="--d:0.2s">We'd love more of you to join the community directly and help us expand it. The spec has real gaps, and they are good first contributions.</p>
+<ul class="ruled a-fade" style="--d:0.5s">
+  <li><b>Zarr.</b> <span class="note">Not covered yet. We need it.</span></li>
+  <li><b>COPC.</b> <span class="note">Same.</span></li>
+  <li><b>Your dataset.</b> <span class="note">Convert one, register it, tell us what broke.</span></li>
+</ul>
+```
+:::
+
+::: {.notes}
+If you're working on pushing CNG, you're already part of our community. But we'd love more of you to join our direct community and help us expand. We still need to add Zarr and COPC, so we'd love help with that, along with many other ideas.
 :::
 
 
-## {#slide-19}
+## {#slide-19 data-autoslide="0" data-state="no-bars"}
 
- Links
+::: {.slide-head}
+[Thank you]{.eyebrow}
 
-[cloudnativegeo.org](https://cloudnativegeo.org)
+[A better way to work with geospatial data]{.headline}
+:::
 
-[This template on GitHub](https://github.com/cloudnativegeo/lightning-talk-quarto-TEMPLATE)
-
-
-## {#slide-20}
-
+::: {.slide-body}
 ```{=html}
-<canvas class="grow-network"></canvas>
-<div class="closing-copy">
-  <p class="statement a-rise" style="--d:7s">Thanks for sharing.</p>
-  <p class="statement-sub hl a-rise" style="--d:9.5s">Wishing you all the best on your presentation.</p>
+<div class="links a-fade" style="--d:0.2s">
+  <a href="https://www.portolan-sdi.org/"><span>The project</span><span class="url">portolan-sdi.org</span></a>
+  <a href="https://www.portolan-sdi.org/registry"><span>The registry</span><span class="url">portolan-sdi.org/registry</span></a>
+  <a href="https://github.com/portolan-sdi"><span>The code</span><span class="url">github.com/portolan-sdi</span></a>
+  <a href="https://www.portolan-sdi.org/spec"><span>The spec</span><span class="url">portolan-sdi.org/spec</span></a>
 </div>
 ```
 
+[Come find me about Zarr, COPC, or converting your data.]{.lead .a-fade style="--d:0.9s"}
+:::
 
-## {#slide-applause data-autoslide="0" data-state="no-bars"}
-
-```{=html}
-<div class="center-v">
-<svg class="clappers" viewBox="0 0 1500 520" aria-label="A crowd of stick figures clapping, with the occasional high-five">
-  <g stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Back row first so nearer figures draw on top; forearms swing about the elbow -->
-    <g class="drift" style="--dx:3.1px; --dy:0.1px; --dp:3.48s; --dd:-2.38s">
-    <svg class="clapper" x="75" y="-6" width="140" height="210" viewBox="0 0 200 300" style="--d:0.27s; --t:0.27s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:2.0px; --dy:1.0px; --dp:3.08s; --dd:-2.33s">
-    <svg class="clapper" x="267" y="1" width="140" height="210" viewBox="0 0 200 300" style="--d:0.55s; --t:0.26s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:2.9px; --dy:1.6px; --dp:4.16s; --dd:-0.57s">
-    <g class="walker" style="--hf:4.37s; --hfd:1.55s; --w:56px">
-    <svg class="clapper" x="467" y="0" width="140" height="210" viewBox="0 0 200 300" style="--d:0.30s; --t:0.27s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r hf-hide"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-r" style="transform-origin:100px 105px" x1="100" y1="105" x2="190" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:2.9px; --dy:1.6px; --dp:4.16s; --dd:-0.57s">
-    <g class="walker" style="--hf:4.37s; --hfd:1.55s; --w:-56px">
-    <svg class="clapper" x="678" y="-7" width="140" height="210" viewBox="0 0 200 300" style="--d:0.11s; --t:0.26s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l hf-hide"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-l" style="transform-origin:100px 105px" x1="100" y1="105" x2="10" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:2.4px; --dy:0.6px; --dp:4.85s; --dd:-1.95s">
-    <svg class="clapper" x="878" y="5" width="140" height="210" viewBox="0 0 200 300" style="--d:0.38s; --t:0.30s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:1.2px; --dy:1.4px; --dp:3.41s; --dd:-3.26s">
-    <svg class="clapper" x="1072" y="2" width="140" height="210" viewBox="0 0 200 300" style="--d:0.06s; --t:0.24s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:0.8px; --dy:1.3px; --dp:3.96s; --dd:-2.17s">
-    <svg class="clapper" x="1282" y="-2" width="140" height="210" viewBox="0 0 200 300" style="--d:0.05s; --t:0.30s" stroke="#8B929B">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:6.0px; --dy:-0.7px; --dp:3.39s; --dd:-0.69s">
-    <svg class="clapper" x="114" y="101" width="170" height="255" viewBox="0 0 200 300" style="--d:0.42s; --t:0.21s" stroke="#BCC1C8">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:3.5px; --dy:-2.3px; --dp:2.58s; --dd:-1.89s">
-    <g class="walker" style="--hf:1.55s; --hfd:1.98s; --w:58px">
-    <svg class="clapper" x="332" y="89" width="170" height="255" viewBox="0 0 200 300" style="--d:0.59s; --t:0.32s" stroke="#BCC1C8">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r hf-hide"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-r" style="transform-origin:100px 105px" x1="100" y1="105" x2="190" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:3.5px; --dy:-2.3px; --dp:2.58s; --dd:-1.89s">
-    <g class="walker" style="--hf:1.55s; --hfd:1.98s; --w:-58px">
-    <svg class="clapper" x="567" y="90" width="170" height="255" viewBox="0 0 200 300" style="--d:0.39s; --t:0.27s" stroke="#BCC1C8">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l hf-hide"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-l" style="transform-origin:100px 105px" x1="100" y1="105" x2="10" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:-0.5px; --dy:-1.6px; --dp:4.10s; --dd:-0.90s">
-    <g class="walker" style="--hf:8.62s; --hfd:1.56s; --w:39px">
-    <svg class="clapper" x="777" y="93" width="170" height="255" viewBox="0 0 200 300" style="--d:0.09s; --t:0.20s" stroke="#BCC1C8">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r hf-hide"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-r" style="transform-origin:100px 105px" x1="100" y1="105" x2="190" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:-0.5px; --dy:-1.6px; --dp:4.10s; --dd:-0.90s">
-    <g class="walker" style="--hf:8.62s; --hfd:1.56s; --w:-39px">
-    <svg class="clapper" x="974" y="88" width="170" height="255" viewBox="0 0 200 300" style="--d:0.32s; --t:0.21s" stroke="#BCC1C8">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l hf-hide"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-l" style="transform-origin:100px 105px" x1="100" y1="105" x2="10" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:-3.8px; --dy:-2.0px; --dp:4.90s; --dd:-4.79s">
-    <svg class="clapper" x="1208" y="94" width="170" height="255" viewBox="0 0 200 300" style="--d:0.11s; --t:0.23s" stroke="#BCC1C8">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:7.2px; --dy:-0.1px; --dp:3.27s; --dd:-0.58s">
-    <g class="walker" style="--hf:7.54s; --hfd:1.83s; --w:58px">
-    <svg class="clapper" x="153" y="199" width="200" height="300" viewBox="0 0 200 300" style="--d:0.02s; --t:0.26s" stroke="#F2F4F6">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r hf-hide"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-r" style="transform-origin:100px 105px" x1="100" y1="105" x2="190" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:7.2px; --dy:-0.1px; --dp:3.27s; --dd:-0.58s">
-    <g class="walker" style="--hf:7.54s; --hfd:1.83s; --w:-58px">
-    <svg class="clapper" x="409" y="203" width="200" height="300" viewBox="0 0 200 300" style="--d:0.26s; --t:0.30s" stroke="#F2F4F6">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l hf-hide"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <line class="hf-arm hf-arm-l" style="transform-origin:100px 105px" x1="100" y1="105" x2="10" y2="105"/>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    </g>
-    <g class="drift" style="--dx:2.7px; --dy:2.9px; --dp:4.00s; --dd:-2.78s">
-    <svg class="clapper" x="652" y="200" width="200" height="300" viewBox="0 0 200 300" style="--d:0.31s; --t:0.28s" stroke="#F2F4F6">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:4.6px; --dy:1.3px; --dp:4.78s; --dd:-3.10s">
-    <svg class="clapper" x="907" y="197" width="200" height="300" viewBox="0 0 200 300" style="--d:0.30s; --t:0.28s" stroke="#F2F4F6">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="drift" style="--dx:4.8px; --dy:-0.1px; --dp:3.64s; --dd:-2.91s">
-    <svg class="clapper" x="1139" y="199" width="200" height="300" viewBox="0 0 200 300" style="--d:0.27s; --t:0.23s" stroke="#F2F4F6">
-      <line x1="100" y1="88" x2="100" y2="190"/>
-      <polyline points="65,270 100,190 135,270"/>
-      <g class="side side-l"><line x1="100" y1="105" x2="50" y2="160"/><line class="forearm forearm-l" style="transform-origin:50px 160px" x1="50" y1="160" x2="96" y2="140"/></g>
-      <g class="side side-r"><line x1="100" y1="105" x2="150" y2="160"/><line class="forearm forearm-r" style="transform-origin:150px 160px" x1="150" y1="160" x2="104" y2="140"/></g>
-      <circle cx="100" cy="60" r="28" fill="#1D232B"/>
-      <g class="spark" stroke="#FFD626" stroke-width="4">
-        <line x1="90" y1="132" x2="81" y2="132"/><line x1="110" y1="132" x2="119" y2="132"/>
-      </g>
-    </svg>
-    </g>
-    <g class="hf-spark" style="--hf:1.55s; --hfd:1.98s" transform="translate(534 129)" stroke="#FFD626" stroke-width="4"><line x1="-7.4" y1="-4.2" x2="-17.7" y2="-10.2"/><line x1="-3.6" y1="-7.7" x2="-8.6" y2="-18.5"/><line x1="0.0" y1="-8.5" x2="0.0" y2="-20.4"/><line x1="3.6" y1="-7.7" x2="8.6" y2="-18.5"/><line x1="7.4" y1="-4.2" x2="17.7" y2="-10.2"/></g>
-    <g class="hf-spark" style="--hf:4.37s; --hfd:1.55s" transform="translate(642 30)" stroke="#FFD626" stroke-width="4"><line x1="-6.1" y1="-3.5" x2="-14.5" y2="-8.4"/><line x1="-3.0" y1="-6.3" x2="-7.1" y2="-15.2"/><line x1="0.0" y1="-7.0" x2="0.0" y2="-16.8"/><line x1="3.0" y1="-6.3" x2="7.1" y2="-15.2"/><line x1="6.1" y1="-3.5" x2="14.5" y2="-8.4"/></g>
-    <g class="hf-spark" style="--hf:7.54s; --hfd:1.83s" transform="translate(381 248)" stroke="#FFD626" stroke-width="4"><line x1="-8.7" y1="-5.0" x2="-20.8" y2="-12.0"/><line x1="-4.2" y1="-9.1" x2="-10.1" y2="-21.8"/><line x1="0.0" y1="-10.0" x2="0.0" y2="-24.0"/><line x1="4.2" y1="-9.1" x2="10.1" y2="-21.8"/><line x1="8.7" y1="-5.0" x2="20.8" y2="-12.0"/></g>
-    <g class="hf-spark" style="--hf:8.62s; --hfd:1.56s" transform="translate(961 131)" stroke="#FFD626" stroke-width="4"><line x1="-7.4" y1="-4.2" x2="-17.7" y2="-10.2"/><line x1="-3.6" y1="-7.7" x2="-8.6" y2="-18.5"/><line x1="0.0" y1="-8.5" x2="0.0" y2="-20.4"/><line x1="3.6" y1="-7.7" x2="8.6" y2="-18.5"/><line x1="7.4" y1="-4.2" x2="17.7" y2="-10.2"/></g>
-  </g>
-</svg>
-<p class="applause-label">(applause time!)</p>
-</div>
-```
-
-```{=html}
-<script>
-// Move the title slide's howto box (authored above the first ##) onto the title slide.
-// Runs immediately, before RevealJS initializes, so the empty slide it leaves never counts.
-(function () {
-  var th = document.getElementById('title-howto');
-  var ts = document.getElementById('title-slide');
-  if (!th || !ts) return;
-  var emptySlide = th.closest('section');
-  ts.appendChild(th);
-  emptySlide.remove();
-})();
-
-document.addEventListener('DOMContentLoaded', function () {
-  // Give the title slide a clean URL hash (#/slide-title instead of #/title-slide)
-  var ts = document.getElementById('title-slide');
-  if (ts) ts.id = 'slide-title';
-
-  // Countdown bar: sits above the RevealJS progress bar, runs right-to-left per slide.
-  // Only shown while auto-advance is on (e.g. not with ?autoSlide=0), so it never
-  // counts down to a slide change that won't happen.
-  function resetCountdown() {
-    var fill = document.getElementById('slide-countdown-fill');
-    fill.style.animation = 'none';
-    fill.offsetHeight; // force reflow
-    fill.style.animation = '';
-  }
-
-  function startCountdown() {
-    if (!Reveal.getConfig().autoSlide) return;
-    var cdBar = document.createElement('div');
-    cdBar.id = 'slide-countdown';
-    cdBar.innerHTML = '<div id="slide-countdown-fill"></div>';
-    document.querySelector('.reveal').appendChild(cdBar);
-    resetCountdown();
-    Reveal.on('slidechanged', resetCountdown);
-  }
-
-  // Reveal may already be ready by now; if so its 'ready' event has been missed
-  if (Reveal.isReady()) startCountdown();
-  else Reveal.on('ready', startCountdown);
-});
-</script>
-```
+::: {.notes}
+Thank you. Come find me if you want to help with Zarr or COPC, or if you have a dataset you want to get into Portolan.
+:::

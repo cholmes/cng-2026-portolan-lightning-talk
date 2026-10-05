@@ -1,2 +1,8 @@
 project:
   output-dir: docs
+  # The screen recordings are referenced from raw HTML blocks and the fonts
+  # from custom.scss, so Quarto doesn't discover either on its own.
+  resources:
+    - media/
+    - fonts/
+    - images/
