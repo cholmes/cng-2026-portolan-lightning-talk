@@ -328,7 +328,7 @@ We're aiming to do that by working with as many of you as possible. We had a gre
 ```
 
 ::: {.notes}
-With each new dataset converted, I hope we push the cloud-native geospatial ecosystem forward in a different way — that it becomes a community of people making great data products and pushing the edges of what's possible with CNG. This was an explorer I made on top of a FIRMS fire data catalog, pushing the bounds of interactivity across twenty years of global data.
+With each new dataset converted, I hope we push the cloud-native geospatial ecosystem forward in a different way — and together we make great data products and push the edges of what's possible with CNG. This is one I did to explore 20 years of fire data.
 :::
 
 
@@ -350,7 +350,7 @@ The other key bit of the ecosystem is the Portolan Registry, where all high qual
 ```
 
 ::: {.notes}
-The goal is to gather enough global data to be able to answer complex geospatial questions with LLMs. We want to enable the type of analysis that would previously take a team of geospatial experts to pull in all the data and extract insights from. This was an early demo showing how you can answer questions about data centres by pulling data in from five different Portolan catalogs.
+The goal is to gather enough global data to be able to answer complex geospatial questions with LLMs. We want to enable the type of analysis that would previously take a team of geospatial experts to pull in all the data and extract insights from. This demo shows getting insights about data centers from five Portolan catalogs.
 :::
 
 
