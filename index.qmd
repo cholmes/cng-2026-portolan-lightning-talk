@@ -217,7 +217,7 @@ We're embracing stac-geoparquet to enable completely cloud-native search. I just
 ```
 
 ::: {.notes}
-Another practice that has emerged is what we call a git-backed catalog. Most Portolan catalogs store their metadata in git, so that if an agent messes up it's easy to roll back. We also include tests and scripts, so the entire processing pipeline can be shared easily.
+Another practice that has emerged is what we call a git-backed catalog. Most Portolan catalogs store their metadata and data scripts in git with CI, so changes are tested and if an agent messes up it's easy to roll back.
 :::
 
 
