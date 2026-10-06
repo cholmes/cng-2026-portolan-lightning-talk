@@ -194,7 +194,7 @@ Structurally it'll look very familiar. But we take out a lot of the choice that 
 ```
 
 ::: {.notes}
-Our goal is to enable CNG to completely replace the traditional spatial data infrastructure APIs and portals. So we take a holistic lens on the ecosystem, to make sure we have all the pieces to deliver a complete experience — and we encourage custom theming of the tools, to make them feel integrated with the data provider.
+Our goal is to enable CNG to completely replace the traditional spatial data infrastructure APIs and portals. So we take a holistic lens on the ecosystem, to make sure we have all the pieces to deliver a complete experience — like this custom themed catalog I made for Portland TriMet.
 :::
 
 
