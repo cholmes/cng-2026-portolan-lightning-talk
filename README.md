@@ -7,9 +7,12 @@ conference, built on the
 Portolan brand.
 
 Nineteen slides. The title and the closing slide sit still; the seventeen in between
-auto-advance every 15 seconds, except slide 7, whose clip runs 17 — 4 minutes 17 seconds
-of running time. A slide sets its own pace with `data-autoslide`, and the countdown bar
-reads that rather than a constant.
+auto-advance every 15 seconds, which is 4 minutes 15 seconds of running time. A slide
+can set its own pace with `data-autoslide`, and the countdown bar reads that rather than
+a constant.
+
+Every clip is cut a little over 15 seconds and none of them loop, so a recording can
+never restart while it is still on screen.
 
 ```bash
 uv sync
