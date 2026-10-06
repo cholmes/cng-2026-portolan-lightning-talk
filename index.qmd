@@ -195,7 +195,7 @@ Our goal is to enable CNG to completely replace the traditional spatial data inf
 ```
 
 ::: {.notes}
-The holistic lens has forced us to solve a lot of issues at the edges of the formats, and it has led to a few advances that are interesting to people in this room: including styles as assets in a STAC catalog, extending the STAC partition extension with glob syntax, and requiring the table extension.
+The holistic lens has forced us to solve a lot of issues at the edges of the formats, and it has led to a few advances that are interesting to people in this room: including styles as assets in a STAC catalog, adding glob syntax, and requiring the table extension.
 :::
 
 
