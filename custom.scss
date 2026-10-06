@@ -581,13 +581,35 @@ $body-bg: #fcfcfa;
 }
 
 .reveal .title-block .subtitle {
-  display: block;
-  margin: 0.55rem 0 0;
-  font-size: 1.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  margin: 0.8rem 0 0;
+  font-size: 1.4em;
   font-weight: 400;
-  line-height: 1.2;
-  color: var(--ink-muted);
+  line-height: 1.1;
+  color: var(--color-accent);
 }
+
+/* The conference's own mark and letterforms, from images/cng-logo.svg. Both
+   take the line's colour, so switching the lockup to CNG's own blue is one
+   declaration here — but two near-identical blues side by side read as a
+   mistake, so the whole line stays on the single Portolan accent. */
+.reveal .cng {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.26em;
+}
+
+.reveal .cng svg {
+  display: block;
+  width: auto;
+  max-width: none;
+  max-height: none;
+}
+
+.reveal .cng-mark { height: 1.02em; }
+.reveal .cng-word { height: 0.7em; }
 
 .reveal .title-block .byline {
   margin: 5rem 0 0;
@@ -598,14 +620,15 @@ $body-bg: #fcfcfa;
   color: var(--ink-faint);
 }
 
-/* "… for CNG": the three dots arrive one at a time, then the words. */
-.reveal .dots span {
-  color: var(--color-accent);
-  opacity: 0;
-}
+/* "… for CNG": the three dots arrive one at a time, then the words, then
+   the lockup. Unhurried on purpose — the title slide does not auto-advance,
+   and the opening line takes longer to say than this takes to land. */
+.reveal .title-block .dots { display: inline-flex; }
 
-.reveal .present .dots span {
-  animation: fade-in 0.35s ease-out var(--d) both;
+.reveal .title-block :is(.dots span, .words) { opacity: 0; }
+
+.reveal .present .title-block :is(.dots span, .words) {
+  animation: fade-in 0.75s ease-out var(--d) both;
 }
 
 
