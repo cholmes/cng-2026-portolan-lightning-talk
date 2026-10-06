@@ -225,7 +225,7 @@ $body-bg: #fcfcfa;
 .reveal .slide-head .headline {
   display: block;
   margin: 0;
-  font-size: 1.12em;
+  font-size: 1.28em;
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -274,7 +274,7 @@ $body-bg: #fcfcfa;
 .reveal .statement {
   display: block;
   margin: 0;
-  font-size: 1.8em;
+  font-size: 2.1em;
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.025em;
@@ -322,6 +322,35 @@ $body-bg: #fcfcfa;
   font-size: 0.78em;
   font-weight: 500;
   letter-spacing: 0.04em;
+}
+
+
+/* ── Full-bleed video slides ───────────────────────────────────────────────
+   A screen recording gets the whole slide and nothing else on it: no header,
+   no caption, no border.
+
+   `contain` with the video pinned to the top, never `cover`: every clip keeps
+   its full width, and a recording wider than 16:9 leaves a band of paper at
+   the bottom rather than losing anything off the sides. The two tall
+   recordings are cropped vertically at encode time to land near 16:9, so
+   their band is nothing. */
+
+.reveal .slides section.bleed {
+  padding: 0 !important;
+  height: 100%;
+}
+
+.reveal video.fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  object-fit: contain;
+  object-position: center top;
 }
 
 
@@ -409,8 +438,8 @@ $body-bg: #fcfcfa;
 .reveal .cols > div:last-child { padding-right: 0; }
 
 .reveal .cols h3 {
-  margin: 0 0 0.7rem;
-  font-size: 0.8em;
+  margin: 0 0 0.8rem;
+  font-size: 0.95em;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -418,8 +447,8 @@ $body-bg: #fcfcfa;
 
 .reveal .cols p {
   margin: 0;
-  font-size: 0.62em;
-  line-height: 1.45;
+  font-size: 0.72em;
+  line-height: 1.4;
   color: var(--ink-muted);
 }
 
@@ -436,7 +465,7 @@ $body-bg: #fcfcfa;
 .reveal ol.ruled li {
   padding: 0.62rem 0;
   border-top: 1px solid var(--color-rule-soft);
-  font-size: 0.72em;
+  font-size: 0.8em;
   line-height: 1.3;
 }
 
@@ -452,6 +481,13 @@ $body-bg: #fcfcfa;
   font-weight: 400;
 }
 
+.reveal :is(ul, ol).ruled.big li {
+  padding: 1.15rem 0;
+  font-size: 1.15em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
 /* Mono counter running down the left of a ruled list */
 .reveal ol.ruled { counter-reset: ruled; }
 
@@ -465,8 +501,9 @@ $body-bg: #fcfcfa;
 .reveal ol.ruled li::before {
   content: counter(ruled, decimal-leading-zero);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.8em;
+  font-size: 0.62em;
   font-weight: 500;
+  padding-top: 0.35em;
   color: var(--color-accent);
 }
 
@@ -618,12 +655,14 @@ $body-bg: #fcfcfa;
 
 .reveal .tree {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.5em;
-  line-height: 1.85;
+  font-size: 0.52em;
+  line-height: 1.75;
   white-space: pre;
   border: 1px solid var(--color-rule);
-  padding: 1.4rem 1.8rem;
+  padding: 1.6rem 2.2rem;
   margin: 0;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .reveal .tree .k { color: var(--color-accent); font-weight: 500; }
@@ -641,7 +680,7 @@ $body-bg: #fcfcfa;
 }
 
 .reveal .eco > div {
-  padding: 1.5rem 1.6rem 1.7rem;
+  padding: 2.2rem 1.8rem 2.4rem;
   border-left: 1px solid var(--color-rule-soft);
 }
 
@@ -650,16 +689,18 @@ $body-bg: #fcfcfa;
 .reveal .eco .n {
   display: block;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.38em;
+  font-size: 0.42em;
   letter-spacing: 0.14em;
   color: var(--color-accent);
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.2rem;
 }
 
 .reveal .eco h3 {
-  margin: 0 0 0.5rem;
-  font-size: 0.66em;
+  margin: 0;
+  font-size: 1.05em;
   font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
 }
 
 .reveal .eco p {
@@ -684,9 +725,9 @@ $body-bg: #fcfcfa;
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid var(--color-rule-soft);
-  font-size: 0.6em;
+  font-size: 0.72em;
   text-decoration: none;
   color: var(--color-text);
 }

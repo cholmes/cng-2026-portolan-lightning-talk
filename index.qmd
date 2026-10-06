@@ -15,6 +15,7 @@ format:
     logo: images/cng-logo.svg
     width: 1600
     height: 900
+    margin: 0
     chalkboard: false
     include-in-header: head.html
     include-after-body: animations.html
@@ -33,90 +34,85 @@ title-slide-attributes:
 :::
 
 ::: {.notes}
-So I'm here to talk about Portolan. But this talk is going to be a bit different from most of the Portolan talks you'll see, because this audience is different from our typical target audience.
+So I'm here to talk about Portolan, a project we've been working on for nine or so months, and publicly launched last month. But this talk is going to be a bit different from every other Portolan talk you'll see, because this audience is different from our typical target audience.
 :::
 
 
 ## {#slide-02}
 
 ::: {.slide-head}
-[Who we are building for]{.eyebrow}
-
-[Portolan's job is to take CNG mainstream]{.headline}
+[Crossing the chasm]{.headline}
 :::
 
 ::: {.slide-body}
 ```{=html}
-<svg class="chasm" viewBox="0 0 1440 520" role="img" aria-label="Technology adoption curve. Innovators and early adopters sit left of the chasm; the early and late majority, where Portolan is aimed, are highlighted in Portolan blue.">
+<svg class="chasm" viewBox="0 0 1440 520" role="img" aria-label="Technology adoption curve, broken by a gap between the early adopters and the early majority. The majority segments, where Portolan is aimed, are in Portolan blue.">
   <defs>
+    <!-- One curve, used as a clip. The segments below are plain rectangles,
+         and the gap is simply the span where no rectangle is drawn. -->
     <clipPath id="bell">
       <path d="M110 430L110 426L118 425L126 425L134 424L143 423L151 423L159 422L167 421L175 420L183 419L191 417L199 416L208 415L216 413L224 411L232 409L240 407L248 405L256 403L265 400L273 397L281 394L289 391L297 388L305 384L313 381L321 377L330 372L338 368L346 363L354 358L362 353L370 348L378 342L387 336L395 330L403 324L411 317L419 311L427 304L435 297L443 289L452 282L460 274L468 267L476 259L484 251L492 243L500 236L509 228L517 220L525 212L533 204L541 197L549 189L557 182L565 175L574 168L582 161L590 155L598 149L606 143L614 138L622 133L631 129L639 125L647 121L655 118L663 115L671 113L679 112L687 111L696 110L704 110L712 111L720 112L728 113L736 115L744 118L753 121L761 124L769 128L777 133L785 138L793 143L801 149L809 155L818 161L826 167L834 174L842 181L850 189L858 196L866 204L875 211L883 219L891 227L899 235L907 243L915 251L923 258L931 266L940 274L948 281L956 289L964 296L972 303L980 310L988 317L997 323L1005 330L1013 336L1021 342L1029 347L1037 353L1045 358L1053 363L1062 368L1070 372L1078 376L1086 380L1094 384L1102 388L1110 391L1119 394L1127 397L1135 400L1143 402L1151 405L1159 407L1167 409L1175 411L1184 413L1192 414L1200 416L1208 417L1216 419L1224 420L1232 421L1241 422L1249 423L1257 423L1265 424L1273 425L1281 425L1289 426L1297 426L1306 427L1314 427L1322 427L1330 428L1330 430Z"/>
     </clipPath>
   </defs>
 
-  <!-- Segments: rectangles clipped to the curve, so the geometry lives in one path -->
   <g clip-path="url(#bell)">
     <rect class="a-fade" style="--d:0.2s"  x="110" y="60" width="190" height="370" fill="rgba(22,23,15,0.20)"/>
-    <rect class="a-fade" style="--d:0.4s"  x="300" y="60" width="200" height="370" fill="rgba(22,23,15,0.38)"/>
-    <rect class="a-fade" style="--d:0.9s"  x="500" y="60" width="200" height="370" fill="#4163cc"/>
-    <rect class="a-fade" style="--d:1.15s" x="700" y="60" width="200" height="370" fill="#4163cc"/>
+    <rect class="a-fade" style="--d:0.4s"  x="300" y="60" width="178" height="370" fill="rgba(22,23,15,0.38)"/>
+    <!-- 478 → 522 is the chasm, and nothing is drawn across it -->
+    <rect class="a-fade" style="--d:1.0s"  x="522" y="60" width="178" height="370" fill="#4163cc"/>
+    <rect class="a-fade" style="--d:1.2s"  x="700" y="60" width="200" height="370" fill="#4163cc"/>
     <rect class="a-fade" style="--d:1.4s"  x="900" y="60" width="430" height="370" fill="rgba(22,23,15,0.20)"/>
   </g>
 
-  <!-- Cream hairlines separating the segments -->
   <g stroke="#fcfcfa" stroke-width="2">
     <line x1="300" y1="387" x2="300" y2="430"/>
     <line x1="700" y1="110" x2="700" y2="430"/>
     <line x1="900" y1="235" x2="900" y2="430"/>
   </g>
 
-  <line x1="110" y1="430" x2="1330" y2="430" stroke="#16170f" stroke-width="2"/>
-
-  <!-- The chasm -->
-  <g class="a-fade" style="--d:0.62s">
-    <line x1="500" y1="36" x2="500" y2="430" stroke="#16170f" stroke-width="2" stroke-dasharray="6 7"/>
-    <path d="M492 56 L508 56 L500 74 Z" fill="#16170f"/>
+  <!-- The ground breaks too -->
+  <g stroke="#16170f" stroke-width="2">
+    <line x1="110" y1="430" x2="478" y2="430"/>
+    <line x1="522" y1="430" x2="1330" y2="430"/>
+    <line x1="478" y1="430" x2="478" y2="452"/>
+    <line x1="522" y1="430" x2="522" y2="452"/>
   </g>
 
-  <text class="band" x="305" y="26" text-anchor="middle">Early market</text>
-  <text class="band" x="500" y="26" text-anchor="middle" style="fill:#16170f">The chasm</text>
+  <text class="band" x="294" y="26" text-anchor="middle">Early market</text>
   <text class="band" x="920" y="26" text-anchor="middle">Mainstream market</text>
 
-  <text class="inside a-fade" style="--d:1.7s" x="700" y="330" text-anchor="middle">Where Portolan is aimed</text>
+  <text class="inside a-fade" style="--d:1.8s" x="711" y="330" text-anchor="middle">Portolan</text>
 
-  <!-- Leader from the left margin into the early-adopter shoulder -->
-  <g class="a-fade" style="--d:0.45s">
-    <text class="here" x="150" y="180">CNG is here today</text>
-    <path d="M186 196 L186 250 L400 332" fill="none" stroke="#4163cc" stroke-width="1.5"/>
-    <circle cx="400" cy="332" r="4.5" fill="#4163cc"/>
+  <g class="a-fade" style="--d:0.6s">
+    <text class="here" x="150" y="186">CNG today</text>
+    <path d="M186 202 L186 252 L392 334" fill="none" stroke="#4163cc" stroke-width="1.5"/>
+    <circle cx="392" cy="334" r="4.5" fill="#4163cc"/>
   </g>
 
   <g>
-    <text class="seg-name" x="205"  y="472" text-anchor="middle">Innovators</text>
-    <text class="seg-pct"  x="205"  y="500" text-anchor="middle">2.5%</text>
-    <text class="seg-name" x="400"  y="472" text-anchor="middle">Early adopters</text>
-    <text class="seg-pct"  x="400"  y="500" text-anchor="middle">13.5%</text>
-    <text class="seg-name" x="600"  y="472" text-anchor="middle">Early majority</text>
-    <text class="seg-pct"  x="600"  y="500" text-anchor="middle">34%</text>
-    <text class="seg-name" x="800"  y="472" text-anchor="middle">Late majority</text>
-    <text class="seg-pct"  x="800"  y="500" text-anchor="middle">34%</text>
-    <text class="seg-name" x="1115" y="472" text-anchor="middle">Laggards</text>
-    <text class="seg-pct"  x="1115" y="500" text-anchor="middle">16%</text>
+    <text class="seg-name" x="205"  y="478" text-anchor="middle">Innovators</text>
+    <text class="seg-pct"  x="205"  y="506" text-anchor="middle">2.5%</text>
+    <text class="seg-name" x="389"  y="478" text-anchor="middle">Early adopters</text>
+    <text class="seg-pct"  x="389"  y="506" text-anchor="middle">13.5%</text>
+    <text class="seg-name" x="611"  y="478" text-anchor="middle">Early majority</text>
+    <text class="seg-pct"  x="611"  y="506" text-anchor="middle">34%</text>
+    <text class="seg-name" x="800"  y="478" text-anchor="middle">Late majority</text>
+    <text class="seg-pct"  x="800"  y="506" text-anchor="middle">34%</text>
+    <text class="seg-name" x="1115" y="478" text-anchor="middle">Laggards</text>
+    <text class="seg-pct"  x="1115" y="506" text-anchor="middle">16%</text>
   </g>
 </svg>
 ```
 :::
 
 ::: {.notes}
-One of our main goals with Portolan is to take cloud-native geospatial mainstream — to go beyond the early adopters, into the early majority and hopefully the late majority.
+That's because our target audience is really people who have never heard of CNG. One of our main goals with Portolan is to take cloud-native geospatial mainstream — to go beyond the early adopters, into the early majority and hopefully the late majority. I believe we're right at the chasm, and our next users don't care about cool tech.
 :::
 
 
 ## {#slide-03}
 
 ::: {.slide-head}
-[The usual pitch]{.eyebrow}
-
 [Why Portolan]{.headline}
 :::
 
@@ -124,25 +120,25 @@ One of our main goals with Portolan is to take cloud-native geospatial mainstrea
 ```{=html}
 <div class="cols">
   <div class="a-rise" style="--d:0.2s">
-    <h3>Open and interoperable</h3>
-    <p>Built on GeoParquet, PMTiles, COG, and STAC, so data drops straight into QGIS, ArcGIS, pandas, or BigQuery.</p>
+    <h3>Open</h3>
+    <p>GeoParquet, PMTiles, COG, STAC. Opens in QGIS, ArcGIS, pandas, BigQuery.</p>
   </div>
   <div class="a-rise" style="--d:0.45s">
-    <h3>Simple, cheap, scalable, sovereign</h3>
-    <p>Your data are just files in a bucket. Any S3-compatible provider, any jurisdiction. You pay for storage and egress — no servers, no databases, no custom APIs.</p>
+    <h3>Cheap and sovereign</h3>
+    <p>Files in a bucket. Any provider, any jurisdiction. No servers.</p>
   </div>
   <div class="a-rise" style="--d:0.7s">
-    <h3>Built for people and agents</h3>
-    <p>Catalogs are well-structured, well-formatted, and well-documented, so people and agents can find, understand, and use them.</p>
+    <h3>For people and agents</h3>
+    <p>Documented well enough that both can actually use it.</p>
   </div>
 </div>
 ```
 :::
 
 ::: {.notes}
-Most of our slides look like this — which is really just trumpeting the benefits of CNG. So a common reaction from people already deep in CNG is: "why do we need this?"
+So most of the talks we give have slides that look like this, articulating the 'why' — and most of that is just trumpeting everything that CNG gets you. So a common reaction from people who are deep in CNG is "why would I need this?"
 
-And if you already know everything about CNG, and you stay up to date on the exact settings of all the formats, and you always make amazing catalogs — then the answer is, you don't.
+And if you already know how to tune each format, and you stay up to date with all the latest advances…
 :::
 
 
@@ -150,12 +146,10 @@ And if you already know everything about CNG, and you stay up to date on the exa
 
 ::: {.center-v}
 [Portolan is for everyone else.]{.statement .a-rise style="--d:0.3s"}
-
-[A Portolan catalog is a STAC catalog — with more guidance, plus requirements on the CNG formats inside it, so that everything performs in a browser.]{.lead .a-fade style="--d:1.6s" }
 :::
 
 ::: {.notes}
-Portolan is for everyone else.
+…and always make amazing catalogs — then the answer is, you don't. Portolan is for everyone else.
 
 A Portolan catalog is a STAC catalog, with more guidance, plus requirements on the CNG formats that are in it to ensure they perform well in a browser.
 :::
@@ -164,65 +158,47 @@ A Portolan catalog is a STAC catalog, with more guidance, plus requirements on t
 ## {#slide-05}
 
 ::: {.slide-head}
-[Anatomy]{.eyebrow}
-
-[STAC, plus the rules that make it work everywhere]{.headline}
-:::
-
-::: {.slide-body .split}
-```{=html}
-<pre class="tree a-fade" style="--d:0.2s">catalog.json          <span class="c">STAC root</span>
-├── <span class="k">AGENTS.md</span>         <span class="c">how an agent should use this data</span>
-├── <span class="k">README.md</span>         <span class="c">how a person should</span>
-└── collections/
-    └── land-use/
-        ├── collection.json
-        ├── <span class="k">style.json</span>    <span class="c">MapLibre style, as an asset</span>
-        ├── land-use.pmtiles
-        ├── land-use.parquet
-        └── parts/<span class="k">*.parquet</span>  <span class="c">glob, via the partition ext.</span></pre>
-<ul class="ruled a-fade" style="--d:0.8s">
-  <li><b>Required formats.</b> <span class="note">GeoParquet, PMTiles, COG — at settings that actually stream.</span></li>
-  <li><b>Required documentation.</b> <span class="note">Every collection says what it is and where it came from.</span></li>
-  <li><b>Required extensions.</b> <span class="note">Table extension on tabular data, so columns are known up front.</span></li>
-  <li><b>A validator.</b> <span class="note"><code>portolan check</code> fails the build when any of that slips.</span></li>
-</ul>
-```
-:::
-
-::: {.notes}
-Structurally there's not much to it. It's STAC, with a handful of things made mandatory: the formats and their settings, the documentation, the table extension, and a validator that enforces all of it.
-:::
-
-
-## {#slide-06}
-
-::: {.slide-head}
-[The browser]{.eyebrow}
-
-[Replacing the portal, not wrapping it]{.headline}
+[A Portolan catalog]{.headline}
 :::
 
 ::: {.slide-body}
 ```{=html}
-<figure class="shot">
-  <video class="screen" src="media/data-browser.mp4" data-autoplay muted loop playsinline></video>
-  <figcaption>portolan-browser, reading a catalog straight out of object storage</figcaption>
-</figure>
+<pre class="tree a-fade" style="--d:0.2s">catalog.json
+├── <span class="k">AGENTS.md</span>                     <span class="c">for agents</span>
+├── <span class="k">README.md</span>                     <span class="c">for people</span>
+└── collections/
+    ├── land-use/
+    │   ├── collection.json
+    │   ├── <span class="k">style.json</span>            <span class="c">cartography, as an asset</span>
+    │   ├── land-use.pmtiles
+    │   └── <span class="k">admin=*/*.parquet</span>     <span class="c">glob, partition extension</span>
+    └── imagery/
+        ├── collection.json
+        ├── <span class="k">items.parquet</span>         <span class="c">stac-geoparquet</span>
+        └── cogs/<span class="k">*.tif</span></pre>
 ```
 :::
 
 ::: {.notes}
-Our goal is to enable CNG to completely replace the traditional spatial data infrastructure APIs and portals. So we take a holistic lens on the ecosystem, to make sure we have all the pieces to deliver a complete experience.
+Structurally it'll look super familiar to anyone who has built a STAC catalog. But we take out a lot of the choice that CNG gives you, in favour of requirements — like always spatially sort your GeoParquet, with reasonably sized row groups and zstd compression; or provide sufficient overviews for your COGs and write gdal stats, so tile servers render consistently. And we require more STAC extensions. Then we enforce all of it with a validator.
+:::
+
+
+## {#slide-06 .bleed}
+
+```{=html}
+<video class="fill" src="media/data-browser.mp4" data-autoplay muted loop playsinline></video>
+```
+
+::: {.notes}
+Our goal is to enable CNG to completely replace the traditional spatial data infrastructure APIs and portals. So we take a holistic lens on the ecosystem, to make sure we have all the pieces to deliver a complete experience — and we encourage custom theming of the tools, to make them feel integrated with the data provider.
 :::
 
 
 ## {#slide-07}
 
 ::: {.slide-head}
-[Vector in the browser]{.eyebrow}
-
-[Making vector data actually work]{.headline}
+[Making vector work in a browser]{.headline}
 :::
 
 ::: {.slide-body .split}
@@ -231,127 +207,68 @@ Our goal is to enable CNG to completely replace the traditional spatial data inf
   <div class="placeholder">Placeholder — vector-in-the-browser recording</div>
 </figure>
 <ul class="ruled a-fade" style="--d:0.3s">
-  <li><b>Styles as STAC assets.</b> <span class="note">A collection ships the cartography it was meant to be seen with.</span></li>
-  <li><b>Glob syntax in the partition extension.</b> <span class="note">Point at a split dataset without listing every part.</span></li>
-  <li><b>The table extension, required.</b> <span class="note">A client knows the schema before it fetches a byte.</span></li>
+  <li>Styles as STAC assets</li>
+  <li>Glob in the partition extension</li>
+  <li>The table extension, required</li>
 </ul>
 ```
 :::
 
 ::: {.notes}
-This has led to a few advances that are interesting to people in this room: including styles as assets in a STAC catalog, extending the STAC partition extension with glob syntax, and requiring the table extension.
+The holistic lens has forced us to solve a lot of issues at the edges of the formats, and it has led to a few advances that are interesting to people in this room: including styles as assets in a STAC catalog, extending the STAC partition extension with glob syntax, and requiring the table extension.
 :::
 
 
-## {#slide-08}
+## {#slide-08 .bleed}
 
-::: {.slide-head}
-[stac-geoparquet]{.eyebrow}
-
-[Cloud-native search, with no search API]{.headline}
-:::
-
-::: {.slide-body .split}
 ```{=html}
-<figure class="shot" style="flex:2 1 0">
-  <video class="screen" src="media/s2-search.mp4" data-autoplay muted loop playsinline></video>
-</figure>
-<div class="stats" style="flex-direction:column; gap:2.4rem">
-  <div><span class="num">20 h</span><span class="label">before</span></div>
-  <div><span class="num">16 min</span><span class="label">after</span></div>
-  <div><span class="num">&lt; 1 s</span><span class="label">search, full S-2 archive</span></div>
-</div>
+<video class="fill" src="media/s2-search.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
 We're embracing stac-geoparquet to enable completely cloud-native search. I just put up all of Sentinel-2 in GeoParquet, and it took a bulk processing job I had from 20 hours down to 16 minutes. And you can see it also powering sub-second search responses across the entire Sentinel-2 archive.
 :::
 
 
-## {#slide-09}
+## {#slide-09 .bleed}
 
-::: {.slide-head}
-[AGENTS.md]{.eyebrow}
-
-[Point an agent at a catalog and it just works]{.headline}
-:::
-
-::: {.slide-body .split}
 ```{=html}
-<figure class="shot" style="flex:1.3 1 0">
-  <video class="screen" src="media/tulip-chat.mp4" data-autoplay muted loop playsinline></video>
-</figure>
-<p class="lead a-fade" style="--d:0.4s">Almost any agent can install DuckDB and do fairly advanced geospatial analysis. The catalog just has to tell it how. We think this is what finally opens geospatial up to many more users.</p>
+<video class="fill" src="media/tulip-chat.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
-And we added an AGENTS.md file, which enables pretty magical direct interaction with geospatial data. Most every agent can install DuckDB and do pretty advanced geospatial analysis, and we believe this will ultimately open up the power of geospatial to many more users.
+And we added an AGENTS.md file, which enables pretty magical direct interaction with geospatial data. Most every agent can install DuckDB and do advanced geospatial analysis, and we believe this will ultimately open up the power of geospatial to many more users.
 :::
 
 
-## {#slide-10}
+## {#slide-10 .bleed}
 
-::: {.slide-head}
-[Skills and connectors]{.eyebrow}
-
-[Making a great catalog is now the easy part]{.headline}
-:::
-
-::: {.slide-body .split}
 ```{=html}
-<figure class="shot" style="flex:1.15 1 0">
-  <video class="screen" src="media/catalog-demo.mp4" data-autoplay muted loop playsinline></video>
-</figure>
-<ul class="ruled a-fade" style="--d:0.4s">
-  <li><b>Agentic skills</b> <span class="note">that translate an entire catalog into Portolan.</span></li>
-  <li><b>Connectors</b> <span class="note">for ArcGIS, WFS, and more, getting better every week.</span></li>
-  <li><b>One prompt</b> <span class="note">from a city open-data portal to a published, documented catalog.</span></li>
-</ul>
+<video class="fill" src="media/catalog-demo.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
 We've also invested in various agentic skills to make it easy to translate entire catalogs into Portolan, and we're continually improving the connectors to ArcGIS, WFS and others. So making a great catalog is incredibly easy.
+
+One prompt: the agent pulls the datasets, converts them, writes the documentation, publishes to Source Cooperative — and there it is in the browser.
 :::
 
 
 ## {#slide-11}
 
 ::: {.slide-head}
-[The whole stack]{.eyebrow}
-
-[A complete ecosystem, built on your work]{.headline}
+[A complete ecosystem]{.headline}
 :::
 
 ::: {.slide-body}
 ```{=html}
 <div class="eco">
-  <div class="a-rise" style="--d:0.15s">
-    <span class="n">01</span>
-    <h3>Spec + validator</h3>
-    <p>One document that says what good looks like, and a checker that enforces it.</p>
-  </div>
-  <div class="a-rise" style="--d:0.35s">
-    <span class="n">02</span>
-    <h3>CLI + skills</h3>
-    <p>Convert, partition, document, and publish — by hand or by agent.</p>
-  </div>
-  <div class="a-rise" style="--d:0.55s">
-    <span class="n">03</span>
-    <h3>Browser</h3>
-    <p>A portal experience served from static files, for any compliant catalog.</p>
-  </div>
-  <div class="a-rise" style="--d:0.75s">
-    <span class="n">04</span>
-    <h3>Registry</h3>
-    <p>Where the catalogs are, so people and agents can find them.</p>
-  </div>
+  <div class="a-rise" style="--d:0.15s"><span class="n">01</span><h3>Spec<br>+ validator</h3></div>
+  <div class="a-rise" style="--d:0.35s"><span class="n">02</span><h3>CLI<br>+ skills</h3></div>
+  <div class="a-rise" style="--d:0.55s"><span class="n">03</span><h3>Browser</h3></div>
+  <div class="a-rise" style="--d:0.75s"><span class="n">04</span><h3>Registry</h3></div>
 </div>
 ```
-
-[Still targeting early adopters. The goal: every geospatial tool understands Portolan, and hundreds of open-data catalogs exist in the format.]{.lead .a-fade style="--d:1s"}
 :::
 
 ::: {.notes}
@@ -362,9 +279,7 @@ We are aiming for a complete ecosystem, and we've been leveraging all the amazin
 ## {#slide-12}
 
 ::: {.slide-head}
-[Yesterday]{.eyebrow}
-
-[We do this by working with as many of you as possible]{.headline}
+[Yesterday's sprint]{.headline}
 :::
 
 ::: {.slide-body .split}
@@ -372,7 +287,7 @@ We are aiming for a complete ecosystem, and we've been leveraging all the amazin
 <figure class="shot" style="flex:1.5 1 0">
   <div class="placeholder">Placeholder — photo from yesterday's sprint</div>
 </figure>
-<div class="stats" style="flex-direction:column; gap:2rem">
+<div class="stats" style="flex-direction:column; gap:2.4rem">
   <div><span class="num">12</span><span class="label">people</span></div>
   <div><span class="num">X</span><span class="label">new catalogs</span></div>
   <div><span class="num">Y</span><span class="label">of new data</span></div>
@@ -385,66 +300,33 @@ We're aiming to do that by working with as many of you as possible. We had a gre
 :::
 
 
-## {#slide-13}
+## {#slide-13 .bleed}
 
-::: {.slide-head}
-[What the data makes possible]{.eyebrow}
-
-[Twenty years of global fire detections, interactive]{.headline}
-:::
-
-::: {.slide-body}
 ```{=html}
-<figure class="shot">
-  <video class="screen" src="media/firms-explorer.mp4" data-autoplay muted loop playsinline></video>
-  <figcaption>an explorer built on a Portolan catalog of NASA FIRMS data</figcaption>
-</figure>
+<video class="fill" src="media/firms-explorer.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
 With each new dataset converted, I hope we push the cloud-native geospatial ecosystem forward in a different way — that it becomes a community of people making great data products and pushing the edges of what's possible with CNG. This was an explorer I made on top of a FIRMS fire data catalog, pushing the bounds of interactivity across twenty years of global data.
 :::
 
 
-## {#slide-14}
+## {#slide-14 .bleed}
 
-::: {.slide-head}
-[The registry]{.eyebrow}
-
-[Like STAC Index, with a guarantee attached]{.headline}
-:::
-
-::: {.slide-body}
 ```{=html}
-<figure class="shot">
-  <video class="screen" src="media/registry.mp4" data-autoplay muted loop playsinline></video>
-  <figcaption>every registered catalog is documented, validated, and performant</figcaption>
-</figure>
+<video class="fill" src="media/registry.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
 The other key bit of the ecosystem is the Portolan Registry, where all high quality catalogs get registered for everyone to query. It's like STAC Index, but with a guarantee to users that the data will always be well-documented and performant.
 :::
 
 
-## {#slide-15}
+## {#slide-15 .bleed}
 
-::: {.slide-head}
-[Why the registry matters]{.eyebrow}
-
-[Five catalogs, one question, no GIS team]{.headline}
-:::
-
-::: {.slide-body .split}
 ```{=html}
-<figure class="shot" style="flex:1.9 1 0">
-  <video class="screen" src="media/finland-demo.mp4" data-autoplay muted loop playsinline></video>
-</figure>
-<p class="lead a-fade" style="--d:0.4s">Siting a data centre in Finland: grid access, flood hazard, cooling water, protected areas, land cover. Previously a team of geospatial experts and a week of work.</p>
+<video class="fill" src="media/finland-demo.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
 The goal is to gather enough global data to be able to answer complex geospatial questions with LLMs. We want to enable the type of analysis that would previously take a team of geospatial experts to pull in all the data and extract insights from. This was an early demo showing how you can answer questions about data centres by pulling data in from five different Portolan catalogs.
@@ -454,9 +336,7 @@ The goal is to gather enough global data to be able to answer complex geospatial
 ## {#slide-16}
 
 ::: {.center-v}
-[We want to see all the world's data in CNG formats.]{.statement .a-rise style="--d:0.2s"}
-
-[AI can help us get there — and the world's data in CNG formats lets anyone use AI to get geospatial insights. That's a couple of orders of magnitude more people using geospatial information.]{.lead .a-fade style="--d:1.4s"}
+[All the world's data, in CNG formats.]{.statement .a-rise style="--d:0.2s"}
 :::
 
 ::: {.notes}
@@ -467,17 +347,15 @@ We want to see all the world's data in CNG formats. We believe AI can help get u
 ## {#slide-17}
 
 ::: {.slide-head}
-[What comes after]{.eyebrow}
-
-[Then we go back across the chasm]{.headline}
+[Then, back across the chasm]{.headline}
 :::
 
 ::: {.slide-body}
 ```{=html}
-<ol class="ruled" style="max-width:1180px">
-  <li class="a-rise" style="--d:0.2s"><span><b>A hundred or so catalogs,</b> <span class="note">and the tools really nailed down.</span></span></li>
-  <li class="a-rise" style="--d:0.45s"><span><b>Case studies and logos,</b> <span class="note">so it isn't only the crazy early adopters.</span></span></li>
-  <li class="a-rise" style="--d:0.7s"><span><b>The early majority,</b> <span class="note">where it would be crazy not to adopt Portolan.</span></span></li>
+<ol class="ruled big">
+  <li class="a-rise" style="--d:0.2s">A hundred catalogs</li>
+  <li class="a-rise" style="--d:0.45s">Case studies and logos</li>
+  <li class="a-rise" style="--d:0.7s">The early majority</li>
 </ol>
 ```
 :::
@@ -490,18 +368,15 @@ Once we have a hundred or so catalogs and get the tools really nailed, our next 
 ## {#slide-18}
 
 ::: {.slide-head}
-[Help wanted]{.eyebrow}
-
-[If you're pushing CNG, you're already part of this]{.headline}
+[Help wanted]{.headline}
 :::
 
-::: {.slide-body .split}
+::: {.slide-body}
 ```{=html}
-<p class="lead a-fade" style="--d:0.2s">We'd love more of you to join the community directly and help us expand it. The spec has real gaps, and they are good first contributions.</p>
-<ul class="ruled a-fade" style="--d:0.5s">
-  <li><b>Zarr.</b> <span class="note">Not covered yet. We need it.</span></li>
-  <li><b>COPC.</b> <span class="note">Same.</span></li>
-  <li><b>Your dataset.</b> <span class="note">Convert one, register it, tell us what broke.</span></li>
+<ul class="ruled big">
+  <li class="a-rise" style="--d:0.2s">Zarr</li>
+  <li class="a-rise" style="--d:0.45s">COPC</li>
+  <li class="a-rise" style="--d:0.7s">Your dataset</li>
 </ul>
 ```
 :::
@@ -514,22 +389,18 @@ If you're working on pushing CNG, you're already part of our community. But we'd
 ## {#slide-19 data-autoslide="0" data-state="no-bars"}
 
 ::: {.slide-head}
-[Thank you]{.eyebrow}
-
 [A better way to work with geospatial data]{.headline}
 :::
 
 ::: {.slide-body}
 ```{=html}
 <div class="links a-fade" style="--d:0.2s">
-  <a href="https://www.portolan-sdi.org/"><span>The project</span><span class="url">portolan-sdi.org</span></a>
-  <a href="https://www.portolan-sdi.org/registry"><span>The registry</span><span class="url">portolan-sdi.org/registry</span></a>
-  <a href="https://github.com/portolan-sdi"><span>The code</span><span class="url">github.com/portolan-sdi</span></a>
-  <a href="https://www.portolan-sdi.org/spec"><span>The spec</span><span class="url">portolan-sdi.org/spec</span></a>
+  <a href="https://www.portolan-sdi.org/"><span>Project</span><span class="url">portolan-sdi.org</span></a>
+  <a href="https://www.portolan-sdi.org/registry"><span>Registry</span><span class="url">portolan-sdi.org/registry</span></a>
+  <a href="https://github.com/portolan-sdi"><span>Code</span><span class="url">github.com/portolan-sdi</span></a>
+  <a href="https://www.portolan-sdi.org/spec"><span>Spec</span><span class="url">portolan-sdi.org/spec</span></a>
 </div>
 ```
-
-[Come find me about Zarr, COPC, or converting your data.]{.lead .a-fade style="--d:0.9s"}
 :::
 
 ::: {.notes}

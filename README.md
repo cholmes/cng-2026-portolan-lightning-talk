@@ -73,9 +73,21 @@ gets and encodes it as H.264:
 It needs `ffmpeg`, and it expects the raws under their original names. Each cut and the
 reason for it is commented in the script.
 
+## Slide shapes
+
+Three kinds of slide, and that is the whole system:
+
+- **Full bleed** (`.bleed`): a screen recording and nothing else — no header, no
+  caption, no border. The video is shown at full width, pinned to the top, so
+  nothing is ever lost off the sides; a recording wider than 16:9 leaves a band of
+  paper at the bottom. Record at 16:9 and the band disappears.
+- **Headed** (`.slide-head` + `.slide-body`): a headline, an ink rule, and one
+  figure or a short list under it.
+- **Statement** (`.center-v`): one sentence, large, centred.
+
 ## Still to do
 
-Three slides are deliberately unfinished and will look it on screen:
+Two slides are deliberately unfinished and will look it on screen:
 
 - `slide-07` wants a vector-in-the-browser recording.
 - `slide-12` wants a photo from the sprint, and real numbers in place of **X** and **Y**.
