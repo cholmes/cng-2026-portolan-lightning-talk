@@ -6,8 +6,8 @@ conference, built on the
 ([Quarto](https://quarto.org/docs/presentations/revealjs/) + RevealJS) and themed to the
 Portolan brand.
 
-Nineteen slides. The title and the closing slide sit still; the seventeen in between
-auto-advance every 15 seconds, which is 4 minutes 15 seconds of running time. A slide
+Twenty slides. The title and the closing slide sit still; the eighteen in between
+auto-advance every 15 seconds, which is 4 minutes 30 seconds of running time. A slide
 can set its own pace with `data-autoslide`, and the countdown bar reads that rather than
 a constant.
 
@@ -21,7 +21,7 @@ uv run quarto preview
 ```
 
 To stop the deck advancing while you edit, put `?autoSlide=0` right after the `/` and
-**before** the `#` — `http://localhost:4200/?autoSlide=0#/slide-08`. Anything after the
+**before** the `#` — `http://localhost:4200/?autoSlide=0#/slide-09`. Anything after the
 `#` is ignored. The countdown bar hides itself when auto-advance is off.
 
 ## Speaker notes

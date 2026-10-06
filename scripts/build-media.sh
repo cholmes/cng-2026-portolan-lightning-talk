@@ -49,15 +49,23 @@ ffmpeg -v error -y -t 15.6 -i "$SRC/firms-cng2.gif" \
 ffmpeg -v error -y -i "$SRC/finland-demo.gif" \
   -vf "fps=20,$EVEN,setpts=PTS/1.49" "${ENC[@]}" "$OUT/finland-demo.mp4"
 
-# 3D BAG in the browser. The national-scale zoom is pretty but slow, so it
-# runs at 2x; the style switching is the point of the slide for this audience,
-# and it gets the rest at full speed.
-ffmpeg -v error -y -ss 1 -t 10 -i "$(raw buildings-vector.gif)" \
+# 3D BAG in the browser, in three beats. The zoom is only there to establish
+# scale, so it is short and runs at 2x. Two style switches, not four. Then the
+# rest of the time goes to the payoff for this audience: the styles sitting in
+# the asset list as mapbox-style-json, and the column descriptions below them.
+ffmpeg -v error -y -ss 6 -t 5 -i "$(raw buildings-vector.gif)" \
   -vf "fps=20,$EVEN,setpts=PTS/2" "${ENC[@]}" "$OUT/.bag-a.mp4"
-ffmpeg -v error -y -ss 11 -t 10.6 -i "$(raw buildings-vector.gif)" \
+ffmpeg -v error -y -ss 12 -t 4.5 -i "$(raw buildings-vector.gif)" \
   -vf "fps=20,$EVEN" "${ENC[@]}" "$OUT/.bag-b.mp4"
-printf "file '%s'\nfile '%s'\n" "$OUT/.bag-a.mp4" "$OUT/.bag-b.mp4" > "$OUT/.bag.txt"
+ffmpeg -v error -y -ss 22.7 -t 8.8 -i "$(raw buildings-vector.gif)" \
+  -vf "fps=20,$EVEN" "${ENC[@]}" "$OUT/.bag-c.mp4"
+printf "file '%s'\nfile '%s'\nfile '%s'\n" "$OUT/.bag-a.mp4" "$OUT/.bag-b.mp4" "$OUT/.bag-c.mp4" > "$OUT/.bag.txt"
 ffmpeg -v error -y -f concat -safe 0 -i "$OUT/.bag.txt" -c copy "$OUT/buildings-3d.mp4"
+
+# Git-backed catalog — the repo root, then tools, tests, the pipeline docs
+# and the catalog metadata itself. Already 16:9, so nothing to crop.
+ffmpeg -v error -y -ss 3 -t 16 -i "$(raw git-backed.gif)" \
+  -vf "fps=20,$EVEN" "${ENC[@]}" "$OUT/git-backed.mp4"
 
 # agents.md chat — 2 s holding on the prompt, then 13 s of the answer.
 # The recording starts mid-answer, so the prompt is a still card bolted on
