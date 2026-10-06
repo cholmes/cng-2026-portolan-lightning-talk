@@ -74,10 +74,10 @@ So I'm here to talk about Portolan, a project we've been working on for nine or 
   <text class="band" x="294" y="26" text-anchor="middle">Early market</text>
   <text class="band" x="920" y="26" text-anchor="middle">Mainstream market</text>
   <text class="outside" x="205" y="352" text-anchor="middle">Tech enthusiasts</text>
-  <text class="inside" class="a-fade" style="--d:1.6s" x="395" y="400" text-anchor="middle">Visionaries</text>
-  <text class="inside" class="a-fade" style="--d:2.3s" x="611" y="330" text-anchor="middle">Pragmatists</text>
-  <text class="inside" class="a-fade" style="--d:3.0s" x="800" y="330" text-anchor="middle">Conservatives</text>
-  <text class="inside" class="a-fade" style="--d:3.7s" x="1035" y="392" text-anchor="middle">Skeptics</text>
+  <text class="inside a-fade" style="--d:1.6s" x="405" y="400" text-anchor="middle">Visionaries</text>
+  <text class="inside a-fade" style="--d:2.3s" x="611" y="330" text-anchor="middle">Pragmatists</text>
+  <text class="inside a-fade" style="--d:3.0s" x="800" y="330" text-anchor="middle">Conservatives</text>
+  <text class="inside a-fade" style="--d:3.7s" x="985" y="400" text-anchor="middle">Skeptics</text>
   <text class="seg-name" x="205" y="478" text-anchor="middle">Innovators</text>
   <text class="seg-pct"  x="205" y="506" text-anchor="middle">2.5%</text>
   <text class="seg-name" x="389" y="478" text-anchor="middle">Early adopters</text>
@@ -98,7 +98,7 @@ So I'm here to talk about Portolan, a project we've been working on for nine or 
 :::
 
 ::: {.notes}
-That's because our target audience is really people who have never heard of CNG. One of our main goals with Portolan is to take cloud-native geospatial beyond early adopters and to the mainstream. I believe we're right at the chasm, and our next users don't care about cool technology.
+That's because our target audience is really people who have never heard of CNG. One of our main goals with Portolan is to take cloud-native geospatial beyond early adopters and to the mainstream, reaching users who don't want to hear about your cool technology.
 :::
 
 
@@ -403,10 +403,10 @@ We want to see all the world's data in CNG formats. We believe AI can help get u
   <text class="band" x="294" y="26" text-anchor="middle">Early market</text>
   <text class="band" x="920" y="26" text-anchor="middle">Mainstream market</text>
   <text class="outside" x="205" y="352" text-anchor="middle">Tech enthusiasts</text>
-  <text class="inside" x="395" y="400" text-anchor="middle">Visionaries</text>
+  <text class="inside" x="405" y="400" text-anchor="middle">Visionaries</text>
   <text class="inside" x="611" y="330" text-anchor="middle">Pragmatists</text>
   <text class="inside" x="800" y="330" text-anchor="middle">Conservatives</text>
-  <text class="inside" x="1035" y="392" text-anchor="middle">Skeptics</text>
+  <text class="inside" x="985" y="400" text-anchor="middle">Skeptics</text>
   <text class="seg-name" x="205" y="478" text-anchor="middle">Innovators</text>
   <text class="seg-pct"  x="205" y="506" text-anchor="middle">2.5%</text>
   <text class="seg-name" x="389" y="478" text-anchor="middle">Early adopters</text>
