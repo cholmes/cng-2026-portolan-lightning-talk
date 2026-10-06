@@ -719,7 +719,7 @@ $body-bg: #fcfcfa;
 }
 
 .reveal .stack > .dep-tree {
-  padding: 0 1.3rem;
+  padding: 0 0.9rem;
   border-left: 1px solid var(--color-rule-soft);
 }
 
@@ -802,33 +802,38 @@ $body-bg: #fcfcfa;
   white-space: nowrap;
 }
 
+/* Fixed height, not min-height: every node in a row has to line up, and a
+   logo's intrinsic size must not be able to push its box taller. */
 .reveal .dep {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-height: 2.8em;
-  padding: 0.45em 0.85em;
+  height: 2.9em;
+  padding: 0.4em 0.8em;
   border: 1px solid var(--color-rule-soft);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.4em;
+  font-size: 0.35em;
   line-height: 1.2;
   color: var(--ink-muted);
   white-space: nowrap;
 }
 
-.reveal .dep.logo { padding: 0.4em 0.8em; }
+/* The spec row is all logos and stands alone, so it gets a taller box. */
+.reveal .dep.tall { height: 4.2em; }
 
+/* Logos share a cap height and take whatever width their proportions want.
+   Capping the width instead would squash the 8:1 wordmarks to nothing while
+   leaving the squarer marks with room to spare. */
 .reveal .dep.logo img {
   display: block;
   width: auto;
-  height: 2.2em;
+  height: 1.5em;
   max-width: none;
   max-height: none;
 }
 
-/* The GeoParquet mark is square where the other two are wide lockups */
-.reveal .dep.logo img[src$=".svg"] { height: 2.7em; }
+.reveal .dep.tall img { height: 2.8em; }
 
 
 /* ── Closing slide ──────────────────────────────────────────────────────── */

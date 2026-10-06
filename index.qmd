@@ -284,11 +284,11 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
   <ul class="dep-tree">
     <li><span class="pnode">Portolan spec</span>
       <ul>
-        <li><span class="dep logo"><img src="images/stack/stac.png" alt="STAC"></span></li>
-        <li><span class="dep logo"><img src="images/stack/geoparquet.svg" alt="GeoParquet"></span>
+        <li><span class="dep logo tall"><img src="images/stack/stac.png" alt="STAC"></span></li>
+        <li><span class="dep logo tall"><img src="images/stack/geoparquet.svg" alt="GeoParquet"></span>
           <ul><li><span class="dep">Parquet</span></li></ul>
         </li>
-        <li><span class="dep logo"><img src="images/stack/cog.png" alt="Cloud Optimized GeoTIFF"></span></li>
+        <li><span class="dep logo tall"><img src="images/stack/cog.png" alt="Cloud Optimized GeoTIFF"></span></li>
       </ul>
     </li>
   </ul>
@@ -301,9 +301,9 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
         </li>
         <li><span class="dep">geoparquet-io</span>
           <ul>
-            <li><span class="dep">Obstore</span></li>
+            <li><span class="dep logo"><img src="images/stack/obstore.png" alt="obstore"></span></li>
             <li><span class="dep">DuckDB</span></li>
-            <li><span class="dep">DuckDB spatial</span>
+            <li><span class="dep logo"><img src="images/stack/duckdb-spatial.png" alt="duckdb-spatial"></span>
               <ul><li><span class="dep">OGR</span></li></ul>
             </li>
           </ul>
@@ -315,7 +315,7 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
   <ul class="dep-tree">
     <li><span class="pnode">Portolan Browser</span>
       <ul>
-        <li><span class="dep">STAC Browser</span>
+        <li><span class="dep logo"><img src="images/stack/stac-browser.png" alt="STAC Browser"></span>
           <ul><li><span class="dep">stac-js</span></li></ul>
         </li>
         <li><span class="dep">MapLibre</span></li>
