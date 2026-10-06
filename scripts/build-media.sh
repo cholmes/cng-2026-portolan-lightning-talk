@@ -18,6 +18,12 @@ mkdir -p "$OUT"
 # H.264 needs even dimensions and several of the raws are odd by one pixel.
 EVEN='crop=trunc(iw/2)*2:trunc(ih/2)*2'
 
+# Most raws sit in SRC; buildings-vector.gif arrived separately and lives one
+# level up. Resolve either.
+raw() {
+  if [ -f "$SRC/$1" ]; then printf '%s' "$SRC/$1"; else printf '%s' "$(dirname "$SRC")/$1"; fi
+}
+
 ENC=(-c:v libx264 -profile:v high -pix_fmt yuv420p -crf 24 -preset slow -movflags +faststart -an)
 
 # stac-geoparquet search — drop the first 3 s of dead air, keep 15 s
@@ -40,6 +46,17 @@ ffmpeg -v error -y -t 15 -i "$SRC/firms-cng2.gif" \
 # Finland data-centre demo — all 23.3 s sped up into 15 s
 ffmpeg -v error -y -i "$SRC/finland-demo.gif" \
   -vf "fps=20,$EVEN,setpts=PTS/1.552" "${ENC[@]}" "$OUT/finland-demo.mp4"
+
+# 3D BAG in the browser — 17 s, and the only clip that is not 15 s, so slide 7
+# carries its own data-autoslide. The national-scale zoom is pretty but slow,
+# so it runs at 1.67x; the style switching is the point of the slide, and it
+# gets the remaining eleven seconds at full speed.
+ffmpeg -v error -y -ss 1 -t 10 -i "$(raw buildings-vector.gif)" \
+  -vf "fps=20,$EVEN,setpts=PTS/1.667" "${ENC[@]}" "$OUT/.bag-a.mp4"
+ffmpeg -v error -y -ss 11 -t 11 -i "$(raw buildings-vector.gif)" \
+  -vf "fps=20,$EVEN" "${ENC[@]}" "$OUT/.bag-b.mp4"
+printf "file '%s'\nfile '%s'\n" "$OUT/.bag-a.mp4" "$OUT/.bag-b.mp4" > "$OUT/.bag.txt"
+ffmpeg -v error -y -f concat -safe 0 -i "$OUT/.bag.txt" -c copy "$OUT/buildings-3d.mp4"
 
 # agents.md chat — 2 s holding on the prompt, then 13 s of the answer.
 # The recording starts mid-answer, so the prompt is a still card bolted on
@@ -70,7 +87,8 @@ printf "file '%s'\nfile '%s'\nfile '%s'\n" \
   "$OUT/.demo-a.mp4" "$OUT/.demo-b.mp4" "$OUT/.demo-c.mp4" > "$OUT/.demo.txt"
 ffmpeg -v error -y -f concat -safe 0 -i "$OUT/.demo.txt" -c copy "$OUT/catalog-demo.mp4"
 
-rm -f "$OUT"/.chat-*.mp4 "$OUT"/.demo-*.mp4 "$OUT"/.chat.txt "$OUT"/.demo.txt
+rm -f "$OUT"/.chat-*.mp4 "$OUT"/.demo-*.mp4 "$OUT"/.bag-*.mp4 \
+      "$OUT"/.chat.txt "$OUT"/.demo.txt "$OUT"/.bag.txt
 
 for f in "$OUT"/*.mp4; do
   dims=$(ffprobe -v error -select_streams v -show_entries stream=width,height -of csv=p=0 "$f")

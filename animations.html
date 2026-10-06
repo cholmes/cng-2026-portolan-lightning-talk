@@ -22,11 +22,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // Countdown bar: sits above the RevealJS progress bar and drains
   // right-to-left over each slide's 15 seconds. Only shown while auto-advance
   // is on (so not under ?autoSlide=0), where it would count down to nothing.
+  // Most slides run on the deck-wide 15 s, but a slide may set its own with
+  // data-autoslide, so the bar is timed from whatever the current slide uses
+  // rather than from a constant.
+  function slideDuration() {
+    var slide = Reveal.getCurrentSlide();
+    var own = slide ? parseInt(slide.dataset.autoslide, 10) : NaN;
+    return isNaN(own) ? (Reveal.getConfig().autoSlide || 0) : own;
+  }
+
   function resetCountdown() {
     var fill = document.getElementById('slide-countdown-fill');
+    if (!fill) return;
     fill.style.animation = 'none';
     fill.offsetHeight; // force reflow
     fill.style.animation = '';
+    fill.style.animationDuration = slideDuration() + 'ms';
   }
 
   function startCountdown() {

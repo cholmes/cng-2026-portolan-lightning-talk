@@ -198,24 +198,12 @@ Our goal is to enable CNG to completely replace the traditional spatial data inf
 :::
 
 
-## {#slide-07}
+<!-- The only slide that isn't 15 s: the clip is 17, so the slide is too. -->
+## {#slide-07 .bleed data-autoslide="17000"}
 
-::: {.slide-head}
-[Making vector work in a browser]{.headline}
-:::
-
-::: {.slide-body .split}
 ```{=html}
-<figure class="shot" style="flex:1.35 1 0">
-  <div class="placeholder">Placeholder — vector-in-the-browser recording</div>
-</figure>
-<ul class="ruled a-fade" style="--d:0.3s">
-  <li>Styles as STAC assets</li>
-  <li>Glob in the partition extension</li>
-  <li>The table extension, required</li>
-</ul>
+<video class="fill" src="media/buildings-3d.mp4" data-autoplay muted loop playsinline></video>
 ```
-:::
 
 ::: {.notes}
 The holistic lens has forced us to solve a lot of issues at the edges of the formats, and it has led to a few advances that are interesting to people in this room: including styles as assets in a STAC catalog, extending the STAC partition extension with glob syntax, and requiring the table extension.
@@ -279,24 +267,12 @@ We are aiming for a complete ecosystem, and we've been leveraging all the amazin
 :::
 
 
-## {#slide-12}
+<!-- The photo is 4:3, so unlike the recordings it is cropped to fill. -->
+## {#slide-12 .bleed}
 
-::: {.slide-head}
-[Yesterday's sprint]{.headline}
-:::
-
-::: {.slide-body .split}
 ```{=html}
-<figure class="shot" style="flex:1.5 1 0">
-  <div class="placeholder">Placeholder — photo from yesterday's sprint</div>
-</figure>
-<div class="stats" style="flex-direction:column; gap:2.4rem">
-  <div><span class="num">12</span><span class="label">people</span></div>
-  <div><span class="num">X</span><span class="label">new catalogs</span></div>
-  <div><span class="num">Y</span><span class="label">of new data</span></div>
-</div>
+<img class="fill crop" src="images/sprint.jpg" alt="Twelve of us at yesterday's Portolan sprint">
 ```
-:::
 
 ::: {.notes}
 We're aiming to do that by working with as many of you as possible. We had a great sprint yesterday, where twelve of us produced X new catalogs with Y amounts of new data. Our focus for now is really the data — converting all the great global datasets, along with many key regional ones.

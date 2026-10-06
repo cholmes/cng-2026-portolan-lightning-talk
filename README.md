@@ -7,7 +7,9 @@ conference, built on the
 Portolan brand.
 
 Nineteen slides. The title and the closing slide sit still; the seventeen in between
-auto-advance every 15 seconds, which is 4 minutes 15 seconds of running time.
+auto-advance every 15 seconds, except slide 7, whose clip runs 17 — 4 minutes 17 seconds
+of running time. A slide sets its own pace with `data-autoslide`, and the countdown bar
+reads that rather than a constant.
 
 ```bash
 uv sync
@@ -80,17 +82,11 @@ Three kinds of slide, and that is the whole system:
 - **Full bleed** (`.bleed`): a screen recording and nothing else — no header, no
   caption, no border. The video is shown at full width, pinned to the top, so
   nothing is ever lost off the sides; a recording wider than 16:9 leaves a band of
-  paper at the bottom. Record at 16:9 and the band disappears.
+  paper at the bottom. Record at 16:9 and the band disappears. A still that is
+  nowhere near 16:9 adds `.crop` and fills the slide instead, as slide 12 does.
 - **Headed** (`.slide-head` + `.slide-body`): a headline, an ink rule, and one
   figure or a short list under it.
 - **Statement** (`.center-v`): one sentence, large, centred.
-
-## Still to do
-
-Two slides are deliberately unfinished and will look it on screen:
-
-- `slide-07` wants a vector-in-the-browser recording.
-- `slide-12` wants a photo from the sprint, and real numbers in place of **X** and **Y**.
 
 ## Publishing
 

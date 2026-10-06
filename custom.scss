@@ -130,6 +130,8 @@ $body-bg: #fcfcfa;
   pointer-events: none;
 }
 
+/* The duration is a fallback: animations.html overwrites it per slide from
+   that slide's data-autoslide. */
 #slide-countdown-fill {
   position: absolute;
   inset: 0;
@@ -340,7 +342,7 @@ $body-bg: #fcfcfa;
   height: 100%;
 }
 
-.reveal video.fill {
+.reveal :is(video, img).fill {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -351,6 +353,13 @@ $body-bg: #fcfcfa;
   border: 0;
   object-fit: contain;
   object-position: center top;
+}
+
+/* For a still that is nowhere near 16:9, filling the slide is worth the crop.
+   The vertical offset keeps the faces centred rather than the frame. */
+.reveal .fill.crop {
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 
