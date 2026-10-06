@@ -154,7 +154,7 @@ And if you already know how to tune each format, and you stay up to date with al
 ::: {.notes}
 …and always make amazing catalogs — then the answer is, you don't. Portolan is for everyone else.
 
-A Portolan catalog is a STAC catalog, with more guidance, plus requirements on the CNG formats that are in it to ensure they perform well in a browser.
+A Portolan catalog is a STAC catalog, with guidance and tools to help new users.
 :::
 
 
@@ -183,7 +183,7 @@ A Portolan catalog is a STAC catalog, with more guidance, plus requirements on t
 :::
 
 ::: {.notes}
-Structurally it'll look super familiar to anyone who has built a STAC catalog. But we take out a lot of the choice that CNG gives you, in favour of requirements — like always spatially sort your GeoParquet, with reasonably sized row groups and zstd compression; or provide sufficient overviews for your COGs and write gdal stats, so tile servers render consistently. And we require more STAC extensions. Then we enforce all of it with a validator.
+Structurally it'll look very familiar. But we take out a lot of the choice that CNG gives you, in favour of requirements — like always spatially sort your GeoParquet, with reasonably sized row groups and zstd compression; or provide sufficient overviews for your COGs and write gdal stats, so tile servers render consistently. And we provide a validator to help users and agents get it right.
 :::
 
 
