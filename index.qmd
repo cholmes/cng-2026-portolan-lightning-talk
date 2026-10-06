@@ -240,8 +240,6 @@ And we added an AGENTS.md file, which enables pretty magical direct interaction 
 
 ::: {.notes}
 We've also invested in various agentic skills to make it easy to translate entire catalogs into Portolan, and we're continually improving the connectors to ArcGIS, WFS and others. So making a great catalog is incredibly easy.
-
-One prompt: the agent pulls the datasets, converts them, writes the documentation, publishes to Source Cooperative — and there it is in the browser.
 :::
 
 
