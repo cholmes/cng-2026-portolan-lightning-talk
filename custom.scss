@@ -342,6 +342,9 @@ $body-bg: #fcfcfa;
   height: 100%;
 }
 
+/* Portrait art centres rather than hanging from the top. */
+.reveal .fill.middle { object-position: center center; }
+
 .reveal :is(video, img).fill {
   position: absolute;
   inset: 0;

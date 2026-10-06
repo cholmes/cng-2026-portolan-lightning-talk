@@ -130,7 +130,7 @@ That's because our target audience is really people who have never heard of CNG.
 ::: {.notes}
 So most of the talks we give have slides that look like this, articulating the 'why' — and most of that is just trumpeting everything that CNG gets you. So a common reaction from people who are deep in CNG is "why would I need this?"
 
-And if you already know how to tune each format, and you stay up to date with all the latest advances…
+And if you already know how to tune each format…
 :::
 
 
@@ -141,7 +141,7 @@ And if you already know how to tune each format, and you stay up to date with al
 :::
 
 ::: {.notes}
-…and always make amazing catalogs — then the answer is, you don't. Portolan is for everyone else.
+…and you stay up to date with all the latest advances, and always make amazing catalogs — then the answer is, you don't. Portolan is for everyone else.
 
 A Portolan catalog is a STAC catalog, with guidance and tools to help new users.
 :::
@@ -262,8 +262,8 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
     <li><span class="pnode">Portolan spec</span>
       <ul>
         <li><span class="dep logo tall"><img src="images/stack/stac.png" alt="STAC"></span></li>
-        <li><span class="dep logo tall"><img src="images/stack/geoparquet.svg" alt="GeoParquet"></span>
-          <ul><li><span class="dep">Parquet</span></li></ul>
+        <li><span class="dep logo tall mark"><img src="images/stack/geoparquet.svg" alt=""><span>GeoParquet</span></span>
+          <ul><li><span class="dep logo mark"><img src="images/stack/parquet.svg" alt=""><span>Parquet</span></span></li></ul>
         </li>
         <li><span class="dep logo tall"><img src="images/stack/cog.png" alt="Cloud Optimized GeoTIFF"></span></li>
       </ul>
@@ -276,7 +276,7 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
         <li><span class="dep">rasterio</span>
           <ul><li><span class="dep logo mark"><img src="images/stack/gdal.svg" alt=""><span>GDAL</span></span></li></ul>
         </li>
-        <li><span class="dep">geoparquet-io</span>
+        <li><span class="dep logo"><img src="images/stack/geoparquet-io.png" alt="geoparquet-io"></span>
           <ul>
             <li><span class="dep logo"><img src="images/stack/obstore.png" alt="obstore"></span></li>
             <li><span class="dep logo"><img src="images/stack/duckdb.svg" alt="DuckDB"></span></li>
@@ -444,21 +444,13 @@ Once we have a hundred or so catalogs and get the tools really nailed, our next 
 :::
 
 
-## {#slide-19}
+<!-- Portrait art on a landscape slide, so it is centred at full height
+     rather than top-anchored like the recordings. -->
+## {#slide-19 .bleed}
 
-::: {.slide-head}
-[Help wanted]{.headline}
-:::
-
-::: {.slide-body}
 ```{=html}
-<ul class="ruled big">
-  <li class="a-rise" style="--d:0.2s">Zarr</li>
-  <li class="a-rise" style="--d:0.45s">COPC</li>
-  <li class="a-rise" style="--d:0.7s">Your dataset</li>
-</ul>
+<img class="fill middle" src="images/poster-i-want-you.jpg" alt="Recruitment poster: I want you for Portolan">
 ```
-:::
 
 ::: {.notes}
 If you're working on pushing CNG, you're already part of our community. But we'd love more of you to join our direct community and help us expand. We still need to add Zarr and COPC, so we'd love help with that, along with many other ideas.
