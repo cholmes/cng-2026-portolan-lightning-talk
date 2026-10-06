@@ -172,7 +172,7 @@ A Portolan catalog is a STAC catalog, with guidance and tools to help new users.
 :::
 
 ::: {.notes}
-Structurally it'll look very familiar. But we remove a lot of the choice that CNG gives you, in favour of good defaults — like spatially sort, zstd-compressed GeoParquets with reasonable row group sizes; or COGs with sufficient overviews and gdal stats embedded. And we provide a validator to help users and agents get it right.
+Structurally it'll look very familiar. But we remove a lot of the choice that CNG gives you, in favour of good defaults — like spatially sorted, zstd-compressed GeoParquets with reasonable row group sizes; or COGs with sufficient overviews and gdal stats embedded. And we provide a validator to help users and agents get it right.
 :::
 
 
