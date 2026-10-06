@@ -37,7 +37,7 @@ title-slide-attributes:
 :::
 
 ::: {.notes}
-So I'm here to talk about Portolan, a project we've been working on for nine or so months, and publicly launched last month. But this talk is going to be a bit different from every other Portolan talk you'll see, because this audience is different from our typical target audience.
+So I'm here to talk about Portolan, a project we publicly launched last month. But this talk is going to be a bit different from every other Portolan talk you'll see, because this audience is different from our typical target audience.
 :::
 
 
