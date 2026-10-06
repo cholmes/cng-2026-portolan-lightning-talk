@@ -660,8 +660,10 @@ $body-bg: #fcfcfa;
 
 .reveal .chasm .seg-name {
   font-family: 'Hanken Grotesk', sans-serif;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   fill: var(--palette-ink);
 }
 
@@ -675,7 +677,20 @@ $body-bg: #fcfcfa;
   font-family: 'Hanken Grotesk', sans-serif;
   font-size: 21px;
   font-weight: 700;
-  fill: var(--palette-surface);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  fill: #ffffff;
+}
+
+/* Innovators is too thin a sliver to hold its name, so that one label sits
+   above the curve in ink instead of inside it in white. */
+.reveal .chasm .outside {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  fill: var(--palette-ink);
 }
 
 .reveal .chasm .here {
@@ -834,6 +849,12 @@ $body-bg: #fcfcfa;
 }
 
 .reveal .dep.tall img { height: 2.8em; }
+
+/* A near-square mark with no wordmark in it is unreadable at the shared cap
+   height, so it gets a little more room and its name set beside it. */
+.reveal .dep.mark { gap: 0.45em; }
+.reveal .dep.mark img { height: 2em; }
+
 
 
 /* ── Closing slide ──────────────────────────────────────────────────────── */

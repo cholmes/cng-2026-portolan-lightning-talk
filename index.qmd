@@ -49,72 +49,49 @@ So I'm here to talk about Portolan, a project we've been working on for nine or 
 
 ::: {.slide-body}
 ```{=html}
-<svg class="chasm" viewBox="0 0 1440 520" role="img" aria-label="Technology adoption curve, broken by a gap between the early adopters and the early majority. The majority segments, where Portolan is aimed, are in Portolan blue.">
-  <defs>
-    <!-- One curve, used as a clip. The segments below are plain rectangles,
-         and the gap is simply the span where no rectangle is drawn. -->
-    <clipPath id="bell">
-      <path d="M110 430L110 426L118 425L126 425L134 424L143 423L151 423L159 422L167 421L175 420L183 419L191 417L199 416L208 415L216 413L224 411L232 409L240 407L248 405L256 403L265 400L273 397L281 394L289 391L297 388L305 384L313 381L321 377L330 372L338 368L346 363L354 358L362 353L370 348L378 342L387 336L395 330L403 324L411 317L419 311L427 304L435 297L443 289L452 282L460 274L468 267L476 259L484 251L492 243L500 236L509 228L517 220L525 212L533 204L541 197L549 189L557 182L565 175L574 168L582 161L590 155L598 149L606 143L614 138L622 133L631 129L639 125L647 121L655 118L663 115L671 113L679 112L687 111L696 110L704 110L712 111L720 112L728 113L736 115L744 118L753 121L761 124L769 128L777 133L785 138L793 143L801 149L809 155L818 161L826 167L834 174L842 181L850 189L858 196L866 204L875 211L883 219L891 227L899 235L907 243L915 251L923 258L931 266L940 274L948 281L956 289L964 296L972 303L980 310L988 317L997 323L1005 330L1013 336L1021 342L1029 347L1037 353L1045 358L1053 363L1062 368L1070 372L1078 376L1086 380L1094 384L1102 388L1110 391L1119 394L1127 397L1135 400L1143 402L1151 405L1159 407L1167 409L1175 411L1184 413L1192 414L1200 416L1208 417L1216 419L1224 420L1232 421L1241 422L1249 423L1257 423L1265 424L1273 425L1281 425L1289 426L1297 426L1306 427L1314 427L1322 427L1330 428L1330 430Z"/>
-    </clipPath>
-  </defs>
-
+<svg class="chasm" viewBox="0 0 1440 520" role="img" aria-label="Technology adoption curve, broken by a gap between the early adopters and the early majority.">
+  <defs><clipPath id="bell"><path d="M110 430L110 426L118 425L126 425L134 424L143 423L151 423L159 422L167 421L175 420L183 419L191 417L199 416L208 415L216 413L224 411L232 409L240 407L248 405L256 403L265 400L273 397L281 394L289 391L297 388L305 384L313 381L321 377L330 372L338 368L346 363L354 358L362 353L370 348L378 342L387 336L395 330L403 324L411 317L419 311L427 304L435 297L443 289L452 282L460 274L468 267L476 259L484 251L492 243L500 236L509 228L517 220L525 212L533 204L541 197L549 189L557 182L565 175L574 168L582 161L590 155L598 149L606 143L614 138L622 133L631 129L639 125L647 121L655 118L663 115L671 113L679 112L687 111L696 110L704 110L712 111L720 112L728 113L736 115L744 118L753 121L761 124L769 128L777 133L785 138L793 143L801 149L809 155L818 161L826 167L834 174L842 181L850 189L858 196L866 204L875 211L883 219L891 227L899 235L907 243L915 251L923 258L931 266L940 274L948 281L956 289L964 296L972 303L980 310L988 317L997 323L1005 330L1013 336L1021 342L1029 347L1037 353L1045 358L1053 363L1062 368L1070 372L1078 376L1086 380L1094 384L1102 388L1110 391L1119 394L1127 397L1135 400L1143 402L1151 405L1159 407L1167 409L1175 411L1184 413L1192 414L1200 416L1208 417L1216 419L1224 420L1232 421L1241 422L1249 423L1257 423L1265 424L1273 425L1281 425L1289 426L1297 426L1306 427L1314 427L1322 427L1330 428L1330 430Z"/></clipPath></defs>
   <g clip-path="url(#bell)">
-    <rect class="a-fade" style="--d:0.3s"  x="110" y="60" width="190" height="370" fill="rgba(22,23,15,0.20)"/>
-    <rect class="a-fade" style="--d:0.9s"  x="299" y="60" width="179" height="370" fill="rgba(22,23,15,0.38)"/>
-    <!-- 478 → 522 is the chasm, and nothing is drawn across it -->
-    <rect class="a-fade" style="--d:2.5s"  x="522" y="60" width="178" height="370" fill="#4163cc"/>
-    <rect class="a-fade" style="--d:3.2s"  x="699" y="60" width="201" height="370" fill="#4163cc"/>
-    <rect class="a-fade" style="--d:3.9s"  x="899" y="60" width="431" height="370" fill="rgba(22,23,15,0.20)"/>
+    <rect class="a-fade" style="--d:0.3s" x="110" y="60" width="190" height="370" fill="#3a9e82"/>
+    <rect class="a-fade" style="--d:1.0s" x="299" y="60" width="180" height="370" fill="#9cc45a"/>
+    <rect class="a-fade" style="--d:1.7s" x="522" y="60" width="179" height="370" fill="#e9a23d"/>
+    <rect class="a-fade" style="--d:2.4s" x="700" y="60" width="201" height="370" fill="#b93a2b"/>
+    <rect class="a-fade" style="--d:3.1s" x="899" y="60" width="432" height="370" fill="#45536a"/>
   </g>
-
-  <!-- Segment boundaries as ticks below the axis. A cream line drawn up
-       through the fill cuts the blue in half and fights the lockup. -->
-  <g stroke="#16170f" stroke-width="2">
-    <line x1="300" y1="430" x2="300" y2="444"/>
-    <line x1="700" y1="430" x2="700" y2="444"/>
-    <line x1="900" y1="430" x2="900" y2="444"/>
+  <g stroke="#9a9b90" stroke-width="1.5" stroke-dasharray="5 6" fill="none">
+    <line x1="110" y1="40" x2="110" y2="430"/>
+    <line x1="478" y1="40" x2="478" y2="430"/>
   </g>
-
-  <!-- The ground breaks too -->
   <g stroke="#16170f" stroke-width="2">
     <line x1="110" y1="430" x2="478" y2="430"/>
     <line x1="522" y1="430" x2="1330" y2="430"/>
     <line x1="478" y1="430" x2="478" y2="452"/>
     <line x1="522" y1="430" x2="522" y2="452"/>
+    <line x1="299" y1="430" x2="299" y2="444"/>
+    <line x1="700" y1="430" x2="700" y2="444"/>
+    <line x1="899" y1="430" x2="899" y2="444"/>
   </g>
-
   <text class="band" x="294" y="26" text-anchor="middle">Early market</text>
   <text class="band" x="920" y="26" text-anchor="middle">Mainstream market</text>
-
-  <!-- Portolan vertical lockup, from portolan-ops/brand/logos.
-       Cream, because it sits on the accent. -->
-  <g class="a-fade" style="--d:4.8s" fill="#fcfcfa" transform="translate(647.00 211.23) scale(1.29744)">
-    <g fill="inherit">
-    <g transform="translate(24.664 0) scale(1.54150)">
-    <path d="M2.83 18.247l26.34-9.124L2.83 0z"/>
-    <path d="M29.17 32V13.753L2.83 22.877z"/>
-    </g>
-    </g>
-    <path fill="inherit" d="M0.000 87.259V68.300H6.066Q9.221 68.300 10.853 69.660Q12.485 71.020 12.485 73.740Q12.485 76.460 10.839 77.888Q9.194 79.316 6.066 79.316H3.128V87.259ZM3.128 76.515H5.739Q7.426 76.515 8.378 75.889Q9.330 75.263 9.330 73.795Q9.330 72.353 8.419 71.727Q7.507 71.102 5.739 71.102H3.128Z M20.672 87.504Q18.768 87.504 17.245 86.606Q15.722 85.708 14.865 84.131Q14.008 82.553 14.008 80.540Q14.008 78.528 14.865 76.950Q15.722 75.372 17.231 74.488Q18.741 73.604 20.672 73.604Q22.631 73.604 24.113 74.488Q25.596 75.372 26.466 76.950Q27.336 78.528 27.336 80.540Q27.336 82.553 26.480 84.131Q25.623 85.708 24.113 86.606Q22.604 87.504 20.672 87.504ZM20.699 84.838Q21.815 84.838 22.631 84.321Q23.447 83.804 23.882 82.825Q24.317 81.846 24.317 80.540Q24.317 79.208 23.882 78.242Q23.447 77.276 22.631 76.759Q21.815 76.243 20.699 76.243Q19.530 76.243 18.714 76.773Q17.898 77.303 17.463 78.256Q17.027 79.208 17.027 80.540Q17.027 81.846 17.463 82.825Q17.898 83.804 18.714 84.321Q19.530 84.838 20.699 84.838Z M29.839 87.259V73.849H32.885V77.467L32.314 77.548Q32.450 76.379 33.103 75.495Q33.756 74.611 34.694 74.107Q35.633 73.604 36.557 73.604Q37.210 73.604 37.809 73.767Q38.407 73.931 39.060 74.311L37.591 77.031Q37.292 76.841 36.816 76.719Q36.340 76.596 35.905 76.596Q35.333 76.596 34.776 76.814Q34.218 77.031 33.783 77.480Q33.348 77.929 33.130 78.636Q32.994 79.017 32.926 79.629Q32.858 80.241 32.858 81.329V87.259Z M45.724 87.504Q44.717 87.504 43.833 87.109Q42.949 86.715 42.433 85.831Q41.916 84.947 41.916 83.505V70.585L44.962 68.899V82.662Q44.962 83.804 45.302 84.416Q45.642 85.028 46.540 85.028Q46.812 85.028 47.179 84.960Q47.546 84.892 47.954 84.784V87.123Q47.410 87.313 46.853 87.408Q46.295 87.504 45.724 87.504ZM39.359 76.188V73.849H47.954V76.188Z M56.278 87.504Q54.374 87.504 52.850 86.606Q51.327 85.708 50.470 84.131Q49.614 82.553 49.614 80.540Q49.614 78.528 50.470 76.950Q51.327 75.372 52.837 74.488Q54.346 73.604 56.278 73.604Q58.236 73.604 59.718 74.488Q61.201 75.372 62.071 76.950Q62.942 78.528 62.942 80.540Q62.942 82.553 62.085 84.131Q61.228 85.708 59.718 86.606Q58.209 87.504 56.278 87.504ZM56.305 84.838Q57.420 84.838 58.236 84.321Q59.052 83.804 59.487 82.825Q59.922 81.846 59.922 80.540Q59.922 79.208 59.487 78.242Q59.052 77.276 58.236 76.759Q57.420 76.243 56.305 76.243Q55.135 76.243 54.319 76.773Q53.503 77.303 53.068 78.256Q52.633 79.208 52.633 80.540Q52.633 81.846 53.068 82.825Q53.503 83.804 54.319 84.321Q55.135 84.838 56.305 84.838Z M68.409 87.504Q67.103 87.504 66.233 86.701Q65.363 85.899 65.363 84.131V68.300H68.382V83.532Q68.382 84.158 68.667 84.444Q68.953 84.729 69.415 84.729Q69.660 84.729 69.919 84.675Q70.177 84.620 70.449 84.539V87.096Q69.932 87.313 69.388 87.408Q68.844 87.504 68.409 87.504Z M81.112 87.259 80.894 85.001V78.800Q80.894 77.494 80.105 76.827Q79.316 76.161 77.902 76.161Q76.814 76.161 75.767 76.583Q74.719 77.004 73.849 77.875L72.163 75.889Q73.468 74.665 74.937 74.135Q76.406 73.604 78.147 73.604Q80.867 73.604 82.376 74.978Q83.886 76.351 83.886 78.800V87.259ZM76.950 87.504Q75.454 87.504 74.298 86.960Q73.142 86.416 72.503 85.436Q71.863 84.457 71.863 83.152Q71.863 82.036 72.339 81.220Q72.815 80.404 73.577 79.942Q74.230 79.534 75.100 79.357Q75.971 79.180 76.923 79.180H81.139V81.438H77.358Q76.868 81.438 76.379 81.533Q75.889 81.628 75.508 81.873Q75.236 82.091 75.059 82.417Q74.883 82.744 74.883 83.179Q74.883 84.049 75.549 84.552Q76.215 85.056 77.331 85.056Q78.310 85.056 79.112 84.620Q79.915 84.185 80.404 83.424Q80.894 82.662 80.894 81.710L81.819 83.206Q81.492 84.620 80.785 85.586Q80.078 86.552 79.099 87.028Q78.120 87.504 76.950 87.504Z M86.851 87.259V73.849H89.870V76.814L89.326 76.950Q89.680 75.780 90.360 75.046Q91.040 74.311 91.951 73.958Q92.862 73.604 93.869 73.604Q96.126 73.604 97.391 74.896Q98.656 76.188 98.656 78.582V87.259H95.637V79.697Q95.637 77.902 94.984 77.059Q94.331 76.215 92.971 76.215Q91.965 76.215 91.271 76.691Q90.577 77.167 90.224 78.174Q89.870 79.180 89.870 80.731V87.259Z"/>
-  </g>
-
-  <g class="a-fade" style="--d:1.6s">
-    <text class="here" x="150" y="186">CNG today</text>
-    <path d="M186 202 L186 252 L392 334" fill="none" stroke="#4163cc" stroke-width="1.5"/>
-    <circle cx="392" cy="334" r="4.5" fill="#4163cc"/>
-  </g>
-
-  <g>
-    <text class="seg-name" x="205"  y="478" text-anchor="middle">Innovators</text>
-    <text class="seg-pct"  x="205"  y="506" text-anchor="middle">2.5%</text>
-    <text class="seg-name" x="389"  y="478" text-anchor="middle">Early adopters</text>
-    <text class="seg-pct"  x="389"  y="506" text-anchor="middle">13.5%</text>
-    <text class="seg-name" x="611"  y="478" text-anchor="middle">Early majority</text>
-    <text class="seg-pct"  x="611"  y="506" text-anchor="middle">34%</text>
-    <text class="seg-name" x="800"  y="478" text-anchor="middle">Late majority</text>
-    <text class="seg-pct"  x="800"  y="506" text-anchor="middle">34%</text>
-    <text class="seg-name" x="1115" y="478" text-anchor="middle">Laggards</text>
-    <text class="seg-pct"  x="1115" y="506" text-anchor="middle">16%</text>
+  <text class="outside" x="205" y="352" text-anchor="middle">Tech enthusiasts</text>
+  <text class="inside" class="a-fade" style="--d:1.6s" x="395" y="400" text-anchor="middle">Visionaries</text>
+  <text class="inside" class="a-fade" style="--d:2.3s" x="611" y="330" text-anchor="middle">Pragmatists</text>
+  <text class="inside" class="a-fade" style="--d:3.0s" x="800" y="330" text-anchor="middle">Conservatives</text>
+  <text class="inside" class="a-fade" style="--d:3.7s" x="1035" y="392" text-anchor="middle">Skeptics</text>
+  <text class="seg-name" x="205" y="478" text-anchor="middle">Innovators</text>
+  <text class="seg-pct"  x="205" y="506" text-anchor="middle">2.5%</text>
+  <text class="seg-name" x="389" y="478" text-anchor="middle">Early adopters</text>
+  <text class="seg-pct"  x="389" y="506" text-anchor="middle">13.5%</text>
+  <text class="seg-name" x="611" y="478" text-anchor="middle">Early majority</text>
+  <text class="seg-pct"  x="611" y="506" text-anchor="middle">34%</text>
+  <text class="seg-name" x="800" y="478" text-anchor="middle">Late majority</text>
+  <text class="seg-pct"  x="800" y="506" text-anchor="middle">34%</text>
+  <text class="seg-name" x="1115" y="478" text-anchor="middle">Laggards</text>
+  <text class="seg-pct"  x="1115" y="506" text-anchor="middle">16%</text>
+  <g class="a-fade" style="--d:2.2s">
+    <text class="here" x="150" y="150">CNG today</text>
+    <path d="M186 166 L186 236 L404 318" fill="none" stroke="#4163cc" stroke-width="1.5"/>
+    <circle cx="404" cy="318" r="4.5" fill="#4163cc"/>
   </g>
 </svg>
 ```
@@ -297,12 +274,12 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
     <li><span class="pnode">Portolan CLI</span>
       <ul>
         <li><span class="dep">rasterio</span>
-          <ul><li><span class="dep">GDAL</span></li></ul>
+          <ul><li><span class="dep logo mark"><img src="images/stack/gdal.svg" alt=""><span>GDAL</span></span></li></ul>
         </li>
         <li><span class="dep">geoparquet-io</span>
           <ul>
             <li><span class="dep logo"><img src="images/stack/obstore.png" alt="obstore"></span></li>
-            <li><span class="dep">DuckDB</span></li>
+            <li><span class="dep logo"><img src="images/stack/duckdb.svg" alt="DuckDB"></span></li>
             <li><span class="dep logo"><img src="images/stack/duckdb-spatial.png" alt="duckdb-spatial"></span>
               <ul><li><span class="dep">OGR</span></li></ul>
             </li>
@@ -316,10 +293,10 @@ One prompt: the agent pulls the datasets, converts them, writes the documentatio
     <li><span class="pnode">Portolan Browser</span>
       <ul>
         <li><span class="dep logo"><img src="images/stack/stac-browser.png" alt="STAC Browser"></span>
-          <ul><li><span class="dep">stac-js</span></li></ul>
+          <ul><li><span class="dep logo"><img src="images/stack/stac-js.png" alt="stac-js"></span></li></ul>
         </li>
-        <li><span class="dep">MapLibre</span></li>
-        <li><span class="dep">deck.gl</span></li>
+        <li><span class="dep logo"><img src="images/stack/maplibre.png" alt="MapLibre"></span></li>
+        <li><span class="dep logo"><img src="images/stack/deck.gl.png" alt="deck.gl"></span></li>
         <li><span class="dep">deck.gl-raster</span></li>
       </ul>
     </li>
@@ -398,11 +375,67 @@ We want to see all the world's data in CNG formats. We believe AI can help get u
 
 ::: {.slide-body}
 ```{=html}
-<ol class="ruled big">
-  <li class="a-rise" style="--d:0.2s">A hundred catalogs</li>
-  <li class="a-rise" style="--d:0.45s">Case studies and logos</li>
-  <li class="a-rise" style="--d:0.7s">The early majority</li>
-</ol>
+<!-- The same curve as slide 2, already drawn: this is the payoff, so only
+     the blue and the lockup animate. The clipPath id differs because both
+     diagrams live in the one document. -->
+<svg class="chasm" viewBox="0 0 1440 520" role="img" aria-label="Technology adoption curve, broken by a gap between the early adopters and the early majority.">
+  <defs><clipPath id="bell-end"><path d="M110 430L110 426L118 425L126 425L134 424L143 423L151 423L159 422L167 421L175 420L183 419L191 417L199 416L208 415L216 413L224 411L232 409L240 407L248 405L256 403L265 400L273 397L281 394L289 391L297 388L305 384L313 381L321 377L330 372L338 368L346 363L354 358L362 353L370 348L378 342L387 336L395 330L403 324L411 317L419 311L427 304L435 297L443 289L452 282L460 274L468 267L476 259L484 251L492 243L500 236L509 228L517 220L525 212L533 204L541 197L549 189L557 182L565 175L574 168L582 161L590 155L598 149L606 143L614 138L622 133L631 129L639 125L647 121L655 118L663 115L671 113L679 112L687 111L696 110L704 110L712 111L720 112L728 113L736 115L744 118L753 121L761 124L769 128L777 133L785 138L793 143L801 149L809 155L818 161L826 167L834 174L842 181L850 189L858 196L866 204L875 211L883 219L891 227L899 235L907 243L915 251L923 258L931 266L940 274L948 281L956 289L964 296L972 303L980 310L988 317L997 323L1005 330L1013 336L1021 342L1029 347L1037 353L1045 358L1053 363L1062 368L1070 372L1078 376L1086 380L1094 384L1102 388L1110 391L1119 394L1127 397L1135 400L1143 402L1151 405L1159 407L1167 409L1175 411L1184 413L1192 414L1200 416L1208 417L1216 419L1224 420L1232 421L1241 422L1249 423L1257 423L1265 424L1273 425L1281 425L1289 426L1297 426L1306 427L1314 427L1322 427L1330 428L1330 430Z"/></clipPath></defs>
+  <g clip-path="url(#bell-end)">
+    <rect x="110" y="60" width="190" height="370" fill="#3a9e82"/>
+    <rect x="299" y="60" width="180" height="370" fill="#9cc45a"/>
+    <rect x="522" y="60" width="179" height="370" fill="#e9a23d"/>
+    <rect x="700" y="60" width="201" height="370" fill="#b93a2b"/>
+    <rect x="899" y="60" width="432" height="370" fill="#45536a"/>
+  </g>
+  <g stroke="#9a9b90" stroke-width="1.5" stroke-dasharray="5 6" fill="none">
+    <line x1="110" y1="40" x2="110" y2="430"/>
+    <line x1="478" y1="40" x2="478" y2="430"/>
+  </g>
+  <g stroke="#16170f" stroke-width="2">
+    <line x1="110" y1="430" x2="478" y2="430"/>
+    <line x1="522" y1="430" x2="1330" y2="430"/>
+    <line x1="478" y1="430" x2="478" y2="452"/>
+    <line x1="522" y1="430" x2="522" y2="452"/>
+    <line x1="299" y1="430" x2="299" y2="444"/>
+    <line x1="700" y1="430" x2="700" y2="444"/>
+    <line x1="899" y1="430" x2="899" y2="444"/>
+  </g>
+  <text class="band" x="294" y="26" text-anchor="middle">Early market</text>
+  <text class="band" x="920" y="26" text-anchor="middle">Mainstream market</text>
+  <text class="outside" x="205" y="352" text-anchor="middle">Tech enthusiasts</text>
+  <text class="inside" x="395" y="400" text-anchor="middle">Visionaries</text>
+  <text class="inside" x="611" y="330" text-anchor="middle">Pragmatists</text>
+  <text class="inside" x="800" y="330" text-anchor="middle">Conservatives</text>
+  <text class="inside" x="1035" y="392" text-anchor="middle">Skeptics</text>
+  <text class="seg-name" x="205" y="478" text-anchor="middle">Innovators</text>
+  <text class="seg-pct"  x="205" y="506" text-anchor="middle">2.5%</text>
+  <text class="seg-name" x="389" y="478" text-anchor="middle">Early adopters</text>
+  <text class="seg-pct"  x="389" y="506" text-anchor="middle">13.5%</text>
+  <text class="seg-name" x="611" y="478" text-anchor="middle">Early majority</text>
+  <text class="seg-pct"  x="611" y="506" text-anchor="middle">34%</text>
+  <text class="seg-name" x="800" y="478" text-anchor="middle">Late majority</text>
+  <text class="seg-pct"  x="800" y="506" text-anchor="middle">34%</text>
+  <text class="seg-name" x="1115" y="478" text-anchor="middle">Laggards</text>
+  <text class="seg-pct"  x="1115" y="506" text-anchor="middle">16%</text>
+
+  <!-- Portolan takes the mainstream. Clipped to the same curve, so the blue
+       lands exactly over the pragmatists and the conservatives. -->
+  <g clip-path="url(#bell-end)">
+    <rect class="a-fade" style="--d:1.4s" x="522" y="60" width="179" height="370" fill="#4163cc"/>
+    <rect class="a-fade" style="--d:2.6s" x="700" y="60" width="201" height="370" fill="#4163cc"/>
+  </g>
+  <!-- Portolan vertical lockup, from portolan-ops/brand/logos.
+       Cream, because it sits on the accent. -->
+  <g class="a-fade" style="--d:3.9s" fill="#fcfcfa" transform="translate(647.00 211.23) scale(1.29744)">
+    <g fill="inherit">
+    <g transform="translate(24.664 0) scale(1.54150)">
+    <path d="M2.83 18.247l26.34-9.124L2.83 0z"/>
+    <path d="M29.17 32V13.753L2.83 22.877z"/>
+    </g>
+    </g>
+    <path fill="inherit" d="M0.000 87.259V68.300H6.066Q9.221 68.300 10.853 69.660Q12.485 71.020 12.485 73.740Q12.485 76.460 10.839 77.888Q9.194 79.316 6.066 79.316H3.128V87.259ZM3.128 76.515H5.739Q7.426 76.515 8.378 75.889Q9.330 75.263 9.330 73.795Q9.330 72.353 8.419 71.727Q7.507 71.102 5.739 71.102H3.128Z M20.672 87.504Q18.768 87.504 17.245 86.606Q15.722 85.708 14.865 84.131Q14.008 82.553 14.008 80.540Q14.008 78.528 14.865 76.950Q15.722 75.372 17.231 74.488Q18.741 73.604 20.672 73.604Q22.631 73.604 24.113 74.488Q25.596 75.372 26.466 76.950Q27.336 78.528 27.336 80.540Q27.336 82.553 26.480 84.131Q25.623 85.708 24.113 86.606Q22.604 87.504 20.672 87.504ZM20.699 84.838Q21.815 84.838 22.631 84.321Q23.447 83.804 23.882 82.825Q24.317 81.846 24.317 80.540Q24.317 79.208 23.882 78.242Q23.447 77.276 22.631 76.759Q21.815 76.243 20.699 76.243Q19.530 76.243 18.714 76.773Q17.898 77.303 17.463 78.256Q17.027 79.208 17.027 80.540Q17.027 81.846 17.463 82.825Q17.898 83.804 18.714 84.321Q19.530 84.838 20.699 84.838Z M29.839 87.259V73.849H32.885V77.467L32.314 77.548Q32.450 76.379 33.103 75.495Q33.756 74.611 34.694 74.107Q35.633 73.604 36.557 73.604Q37.210 73.604 37.809 73.767Q38.407 73.931 39.060 74.311L37.591 77.031Q37.292 76.841 36.816 76.719Q36.340 76.596 35.905 76.596Q35.333 76.596 34.776 76.814Q34.218 77.031 33.783 77.480Q33.348 77.929 33.130 78.636Q32.994 79.017 32.926 79.629Q32.858 80.241 32.858 81.329V87.259Z M45.724 87.504Q44.717 87.504 43.833 87.109Q42.949 86.715 42.433 85.831Q41.916 84.947 41.916 83.505V70.585L44.962 68.899V82.662Q44.962 83.804 45.302 84.416Q45.642 85.028 46.540 85.028Q46.812 85.028 47.179 84.960Q47.546 84.892 47.954 84.784V87.123Q47.410 87.313 46.853 87.408Q46.295 87.504 45.724 87.504ZM39.359 76.188V73.849H47.954V76.188Z M56.278 87.504Q54.374 87.504 52.850 86.606Q51.327 85.708 50.470 84.131Q49.614 82.553 49.614 80.540Q49.614 78.528 50.470 76.950Q51.327 75.372 52.837 74.488Q54.346 73.604 56.278 73.604Q58.236 73.604 59.718 74.488Q61.201 75.372 62.071 76.950Q62.942 78.528 62.942 80.540Q62.942 82.553 62.085 84.131Q61.228 85.708 59.718 86.606Q58.209 87.504 56.278 87.504ZM56.305 84.838Q57.420 84.838 58.236 84.321Q59.052 83.804 59.487 82.825Q59.922 81.846 59.922 80.540Q59.922 79.208 59.487 78.242Q59.052 77.276 58.236 76.759Q57.420 76.243 56.305 76.243Q55.135 76.243 54.319 76.773Q53.503 77.303 53.068 78.256Q52.633 79.208 52.633 80.540Q52.633 81.846 53.068 82.825Q53.503 83.804 54.319 84.321Q55.135 84.838 56.305 84.838Z M68.409 87.504Q67.103 87.504 66.233 86.701Q65.363 85.899 65.363 84.131V68.300H68.382V83.532Q68.382 84.158 68.667 84.444Q68.953 84.729 69.415 84.729Q69.660 84.729 69.919 84.675Q70.177 84.620 70.449 84.539V87.096Q69.932 87.313 69.388 87.408Q68.844 87.504 68.409 87.504Z M81.112 87.259 80.894 85.001V78.800Q80.894 77.494 80.105 76.827Q79.316 76.161 77.902 76.161Q76.814 76.161 75.767 76.583Q74.719 77.004 73.849 77.875L72.163 75.889Q73.468 74.665 74.937 74.135Q76.406 73.604 78.147 73.604Q80.867 73.604 82.376 74.978Q83.886 76.351 83.886 78.800V87.259ZM76.950 87.504Q75.454 87.504 74.298 86.960Q73.142 86.416 72.503 85.436Q71.863 84.457 71.863 83.152Q71.863 82.036 72.339 81.220Q72.815 80.404 73.577 79.942Q74.230 79.534 75.100 79.357Q75.971 79.180 76.923 79.180H81.139V81.438H77.358Q76.868 81.438 76.379 81.533Q75.889 81.628 75.508 81.873Q75.236 82.091 75.059 82.417Q74.883 82.744 74.883 83.179Q74.883 84.049 75.549 84.552Q76.215 85.056 77.331 85.056Q78.310 85.056 79.112 84.620Q79.915 84.185 80.404 83.424Q80.894 82.662 80.894 81.710L81.819 83.206Q81.492 84.620 80.785 85.586Q80.078 86.552 79.099 87.028Q78.120 87.504 76.950 87.504Z M86.851 87.259V73.849H89.870V76.814L89.326 76.950Q89.680 75.780 90.360 75.046Q91.040 74.311 91.951 73.958Q92.862 73.604 93.869 73.604Q96.126 73.604 97.391 74.896Q98.656 76.188 98.656 78.582V87.259H95.637V79.697Q95.637 77.902 94.984 77.059Q94.331 76.215 92.971 76.215Q91.965 76.215 91.271 76.691Q90.577 77.167 90.224 78.174Q89.870 79.180 89.870 80.731V87.259Z"/>
+  </g>
+</svg>
 ```
 :::
 
